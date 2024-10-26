@@ -1,10 +1,19 @@
 "use client";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
 import { usePathname } from "next/navigation";
+
 import Link from "next/link";
 
 import { CiMenuBurger } from "react-icons/ci";
+
+import { VisuallyHidden } from "@reach/visually-hidden";
 
 const links = [
   {
@@ -39,6 +48,11 @@ const MobileNav = () => {
       </SheetTrigger>
 
       <SheetContent>
+        {/* Title hidden for accessibility */}
+        <SheetTitle>
+          <VisuallyHidden>Menu de navegação</VisuallyHidden>
+        </SheetTitle>
+
         {/* logo */}
         <div className="mt-32 mb-40 text-center text-2xl ">
           <Link href="/">
