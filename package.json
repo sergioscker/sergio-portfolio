@@ -1,5 +1,5 @@
 {
-  "name": "y",
+  "name": "porfolio",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -24,6 +24,7 @@
     "react": "19.0.0-rc-69d4b800-20241021",
     "react-dom": "19.0.0-rc-69d4b800-20241021",
     "react-icons": "^5.3.0",
+    "swiper": "^11.1.14",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7"
   },
@@ -38,7 +39,7 @@
   "directories": {
     "lib": "lib"
   },
-  "author": "sergioliveira-developer <sergiowallace11@hotmail.com>",
+  "author": "Sérgio Olivera <sergiowallace11@hotmail.com>",
   "license": "ISC",
   "repository": "https://github.com/sergioscker/sergio-porfolio.git"
 }

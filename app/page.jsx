@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { FiDownload } from "react-icons/fi";
+import { Button } from '@/components/ui/button';
+import { FiDownload } from 'react-icons/fi';
 
 //components
-import Socials from "@/components/Social";
-import Photo from "@/components/Photo";
+import Socials from '@/components/Social';
+import Photo from '@/components/Photo';
 
 const Home = () => {
   return (
@@ -17,7 +17,7 @@ const Home = () => {
             </span>
 
             <h1 className="h1 mb-6">
-              Hello Im <br />
+              Hello I&apos;m <br />
               <span className="text-accent">Sérgio Oliveira</span>
             </h1>
 

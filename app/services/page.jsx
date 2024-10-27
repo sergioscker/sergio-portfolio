@@ -1,46 +1,46 @@
-"use client";
+'use client';
 
-import { BsArrowDownRight } from "react-icons/bs";
-import Link from "next/link";
+import { BsArrowDownRight } from 'react-icons/bs';
+import Link from 'next/link';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const services = [
   {
-    num: "01",
-    title: "LadingPage",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    href: "https://tech-solutions-kappa.vercel.app",
+    num: '01',
+    title: 'LadingPage',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    href: 'https://tech-solutions-kappa.vercel.app',
   },
   {
-    num: "02",
-    title: "BurgerShop",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    href: "https://burguershop-eight.vercel.app",
+    num: '02',
+    title: 'BurgerShop',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    href: 'https://burguershop-eight.vercel.app',
   },
   {
-    num: "03",
-    title: "Financial Control",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    href: "https://finantialcontrol.vercel.app",
+    num: '03',
+    title: 'Financial Control',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    href: 'https://finantialcontrol.vercel.app',
   },
   {
-    num: "04",
-    title: "Users Office",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    href: "https://users-office.vercel.app",
+    num: '04',
+    title: 'Users Office',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    href: 'https://users-office.vercel.app',
   },
   {
-    num: "06",
-    title: "Convert Money",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    href: "https://converter-coins.vercel.app",
+    num: '06',
+    title: 'Convert Money',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    href: 'https://converter-coins.vercel.app',
   },
   {
-    num: "05",
-    title: "Mario",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    href: "https://mariobross-three.vercel.app",
+    num: '05',
+    title: 'Mario',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    href: 'https://mariobross-three.vercel.app',
   },
 ];
 
@@ -52,7 +52,7 @@ const Services = () => {
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+            transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
           }}
           className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
         >

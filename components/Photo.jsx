@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { easeInOut, motion } from "framer-motion";
-import Image from "next/image";
+import { easeInOut, motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Photo = () => {
   return (
@@ -10,7 +10,7 @@ const Photo = () => {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { delay: 2, duration: 0.4, ease: "easeIn" },
+          transition: { delay: 2, duration: 0.4, ease: 'easeIn' },
         }}
       >
         {/* image */}
@@ -18,7 +18,7 @@ const Photo = () => {
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
+            transition: { delay: 2.4, duration: 0.4, ease: 'easeInOut' },
           }}
           className="w-[278px] h-[278px] xl:w-[478px] xl:h-[478px] mix-blend-lighten absolute"
         >
@@ -48,15 +48,15 @@ const Photo = () => {
             strokeWidth="4"
             strokeLinejoin="round"
             strokeLinecap="round"
-            initial={{ strokeDasharray: "24 10 0 0" }}
+            initial={{ strokeDasharray: '24 10 0 0' }}
             animate={{
-              strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
+              strokeDasharray: ['15 120 25 25', '16 25 92 72', '4 250 22 22'],
               rotate: [120, 360],
             }}
             transition={{
               duration: 20,
               repeat: Infinity,
-              repeatType: "reverse",
+              repeatType: 'reverse',
             }}
           />
         </motion.svg>

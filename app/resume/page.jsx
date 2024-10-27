@@ -1,5 +1,8 @@
-"use client";
+'use client';
 
+import { motion } from 'framer-motion';
+
+// icons
 import {
   FaHtml5,
   FaCss3,
@@ -8,134 +11,132 @@ import {
   FaFigma,
   FaReact,
   FaNode,
-} from "react-icons/fa";
+} from 'react-icons/fa';
 
-// components
 import {
   SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
   SiStyledcomponents,
   SiVite,
-} from "react-icons/si";
+} from 'react-icons/si';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+// components
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from '@/components/ui/tooltip';
 
-import { ScrollArea } from "@/components/ui/scroll-area";
-
-import { motion } from "framer-motion";
-
-// About data
-const about = {
-  title: "About me",
-  description:
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi facere sint consequatur nisi iste?",
-  info: [
-    {
-      fieldName: "Name",
-      fieldValue: "Sérgio Oliveira",
-    },
-    {
-      fieldName: "Phone",
-      fieldValue: "(+351) 939274154",
-    },
-    {
-      fieldName: "Email",
-      fieldValue: "sergiowallace11@hotmail.com",
-    },
-    {
-      fieldName: "Languages",
-      fieldValue: "English, Portuguses and Spanish",
-    },
-  ],
-};
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 // experience data
 const experience = {
-  icon: "/assets/resume/badge.svg",
-  title: "My experience",
+  icon: '/assets/resume/badge.svg',
+  title: 'My experience',
   description:
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi facere sint consequatur nisi iste?",
+    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi facere sint consequatur nisi iste?',
   items: [
     {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
+      company: 'E-commerce Startup',
+      position: 'Freelance Web Developer',
     },
   ],
 };
 
 //education data
 const education = {
-  icon: "/assets/resume/cap.svg",
-  title: "My education",
+  icon: '/assets/resume/cap.svg',
+  title: 'My education',
   description:
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi facere sint consequatur nisi iste?",
+    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi facere sint consequatur nisi iste?',
   items: [
     {
-      institution: "Dev Club",
-      degree: "FullStack Developer",
+      institution: 'Dev Club',
+      degree: 'FullStack Developer',
     },
   ],
 };
 
 // skills data
 const skills = {
-  title: "My skills",
+  title: 'My skills',
   skillsList: [
     {
       icon: <FaHtml5 />,
-      name: "html 5",
+      name: 'html 5',
     },
     {
       icon: <FaCss3 />,
-      name: "css 3",
+      name: 'css 3',
     },
     {
       icon: <FaGit />,
-      name: "git",
+      name: 'git',
     },
     {
       icon: <FaJs />,
-      name: "javascript",
+      name: 'javascript',
     },
     {
       icon: <FaFigma />,
-      name: "figma designer",
+      name: 'figma designer',
     },
     {
       icon: <FaReact />,
-      name: "react.js",
+      name: 'react.js',
     },
     {
       icon: <FaNode />,
-      name: "node.js",
+      name: 'node.js',
     },
     {
       icon: <SiNextdotjs />,
-      name: "next.js",
+      name: 'next.js',
     },
     {
       icon: <SiTailwindcss />,
-      name: "tailwind.css",
+      name: 'tailwind.css',
     },
     {
       icon: <SiTypescript />,
-      name: "typescript",
+      name: 'typescript',
     },
     {
       icon: <SiStyledcomponents />,
-      name: "styled-components",
+      name: 'styled-components',
     },
     {
       icon: <SiVite />,
-      name: "Vite + React",
+      name: 'Vite + React',
+    },
+  ],
+};
+
+// About data
+const about = {
+  title: 'About me',
+  description:
+    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi facere sint consequatur nisi iste?',
+  info: [
+    {
+      fieldName: 'Name',
+      fieldValue: 'Sérgio Oliveira',
+    },
+    {
+      fieldName: 'Phone',
+      fieldValue: '(+351) 939274154',
+    },
+    {
+      fieldName: 'Email',
+      fieldValue: 'sergiowallace11@hotmail.com',
+    },
+    {
+      fieldName: 'Languages',
+      fieldValue: 'English, Portugueses and Spanish',
     },
   ],
 };
@@ -146,7 +147,7 @@ const Resume = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
       }}
       className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
     >

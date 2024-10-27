@@ -1,40 +1,40 @@
-"use client";
+'use client';
 
 import {
   Sheet,
   SheetContent,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from '@/components/ui/sheet';
 
-import { usePathname } from "next/navigation";
+import { usePathname } from 'next/navigation';
 
-import Link from "next/link";
+import Link from 'next/link';
 
-import { CiMenuBurger } from "react-icons/ci";
+import { CiMenuBurger } from 'react-icons/ci';
 
-import { VisuallyHidden } from "@reach/visually-hidden";
+import { VisuallyHidden } from '@reach/visually-hidden';
 
 const links = [
   {
-    name: "home",
-    path: "/",
+    name: 'home',
+    path: '/',
   },
   {
-    name: "services",
-    path: "/services",
+    name: 'services',
+    path: '/services',
   },
   {
-    name: "resume",
-    path: "/resume",
+    name: 'resume',
+    path: '/resume',
   },
   {
-    name: "work",
-    path: "/work",
+    name: 'work',
+    path: '/work',
   },
   {
-    name: "contact",
-    path: "/contact",
+    name: 'contact',
+    path: '/contact',
   },
 ];
 
@@ -71,7 +71,7 @@ const MobileNav = () => {
                 key={index}
                 className={`${
                   link.path === pathname &&
-                  "text-accent border-b-2 border-accent"
+                  'text-accent border-b-2 border-accent'
                 } text-xl capitalize hover:text-accent-hover transition-all`}
               >
                 {link.name}

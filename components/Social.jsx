@@ -1,24 +1,23 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { FaGithub, FaLinkedinIn, FaWhatsapp, FaMailBulk } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaWhatsapp, FaMailBulk } from 'react-icons/fa';
 
 const sociais = [
- 
   {
     icon: <FaLinkedinIn />,
-    path: "https://pt.linkedin.com/in/sergioliveiira",
+    path: 'https://pt.linkedin.com/in/sergioliveiira',
   },
   {
     icon: <FaGithub />,
-    path: "https://github.com/sergioscker",
+    path: 'https://github.com/sergioscker',
   },
   {
     icon: <FaWhatsapp />,
-    path: "https://wa.link/up0k32",
+    path: 'https://wa.link/up0k32',
   },
   {
     icon: <FaMailBulk />,
-    path: "mailto:sergiowallace11@hotmail.com",
+    path: 'mailto:sergiowallace11@hotmail.com',
   },
 ];
 
