@@ -11,6 +11,8 @@
 @layer base {
   body {
     @apply font-primary bg-primary text-white leading-loose;
+    @apply text-center xl:text-left;
+    font-family: var(--font-jetbrainsMono);
   }
 
   .h1 {

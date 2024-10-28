@@ -1,6 +1,6 @@
 'use client';
 
-import { easeInOut, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const Photo = () => {
@@ -44,7 +44,7 @@ const Photo = () => {
             cx="253"
             cy="253"
             r="293"
-            stroke="#4a8fff"
+            stroke="#0086b0"
             strokeWidth="4"
             strokeLinejoin="round"
             strokeLinecap="round"

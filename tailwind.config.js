@@ -15,16 +15,16 @@ module.exports = {
       sm: '640px',
       md: '768px',
       lg: '960px',
-      xl: '1200px',
+      xl: '1400px',
     },
     fontFamily: {
-      primary: '(--font-geist-sans)',
+      primary: ['JetBrains', 'sans-serif'],
     },
     extend: {
       colors: {
         primary: '#1c1c22',
         accent: {
-          DEFAULT: '#4a8fff',
+          DEFAULT: '#0086b0',
           hover: '#01579b',
         },
         borderRadius: {

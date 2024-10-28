@@ -6,15 +6,6 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 
 // icons
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from 'react-icons/fa';
@@ -67,22 +58,6 @@ const Contact = () => {
                 <Input type="email" placeholder="Email address" />
                 <Input type="phonenumber" placeholder="Phone number" />
               </div>
-
-              {/* select */}
-              <Select>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service" />
-                </SelectTrigger>
-
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est">Web Development</SelectItem>
-                    <SelectItem value="cst">UI/UX Design</SelectItem>
-                    <SelectItem value="mst">Logo Design</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
 
               {/* textarea */}
               <Textarea

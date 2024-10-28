@@ -1,104 +1,144 @@
 'use client';
-
-import { BsArrowDownRight } from 'react-icons/bs';
-import Link from 'next/link';
-
 import { motion } from 'framer-motion';
 
-const services = [
-  {
-    num: '01',
-    title: 'LadingPage',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    href: 'https://tech-solutions-kappa.vercel.app',
-  },
-  {
-    num: '02',
-    title: 'BurgerShop',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    href: 'https://burguershop-eight.vercel.app',
-  },
-  {
-    num: '03',
-    title: 'Financial Control',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    href: 'https://finantialcontrol.vercel.app',
-  },
-  {
-    num: '04',
-    title: 'Users Office',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    href: 'https://users-office.vercel.app',
-  },
-  {
-    num: '06',
-    title: 'Convert Money',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    href: 'https://converter-coins.vercel.app',
-  },
-  {
-    num: '05',
-    title: 'Mario',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    href: 'https://mariobross-three.vercel.app',
-  },
-];
+import Image from 'next/image';
 
 const Services = () => {
   return (
-    <section className="min-h-[100vh] flex flex-col justify-center py-12 xl:py-10 mt-8">
-      <div className="container mx-auto">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
-          }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
+    <section className="pt-20 lg:pt-20 px-4 sm:px-8 lg:px-[200px]">
+      <h2 className="font-primary font-bold text-[25px] lg:text-[75px] text-center mb-8">
+        Workflow
+      </h2>
+
+      <motion.div
+        className="flex flex-col md:flex-row justify-between items-center space-x-0 w-full"
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+          transition: { delay: 2, duration: 0.4, ease: 'easeIn' },
+        }}
+      >
+        <div
+          className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] 
+        backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg 
+        shadow-md w-[300px] h-[300px] flex flex-col items-center justify-center text-center p-4"
         >
-          {services.map((service, index) => {
-            return (
-              <div
-                key={index}
-                className="flex-1 flex flex-col justify-center gap-6 group"
-              >
-                {/* top */}
-                <div className="w-full flex justify-between items-center ">
-                  <div
-                    className="text-5xl font-extrabold text-outline text-transparent 
-                  group-hover:text-outline-hover transition-all duration-500"
-                  >
-                    {service.num}
-                  </div>
+          <div
+            className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px] 
+            border border-white border-opacity-10 rounded-lg 
+          shadow-md w-[250px] h-[300px] flex flex-col items-center justify-center text-center p-4"
+          >
+            <Image
+              src="/assets/work/briefing.svg"
+              alt="briefing"
+              quality={100}
+              width={85}
+              height={85}
+            />
+            <h3 className="mt-6 text-2xl font-bold text-gray-300">Briefing</h3>
+          </div>
+        </div>
 
-                  <Link
-                    href={service.href}
-                    className="w-[70px] h-[70px] rounded-full bg-white
-                  group-hover:bg-accent transition-all durantion-500 flex justify-center 
-                  items-center hover:-rotate-45"
-                  >
-                    <BsArrowDownRight className="text-primary text-3xl" />
-                  </Link>
-                </div>
+        <div className="flex items-center justify-center lg:w-[160px] h-full lg:h-[320px]">
+          <Image
+            src="/assets/work/arrow.svg"
+            alt="arrow"
+            quality={100}
+            width={28}
+            height={28}
+            className="object-contain w-full h-full lg:rotate-0 rotate-90"
+          />
+        </div>
 
-                {/* title */}
-                <h2
-                  className="text-[42px] font-bold leading-none text-white
-                 group-hover:text-accent-hover transition-all duration-500"
-                >
-                  {service.title}
-                </h2>
+        <div
+          className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px]
+         border border-white border-opacity-10 rounded-lg shadow-md w-[300px] h-[300px] 
+         flex flex-col items-center justify-center text-center p-4"
+        >
+          <div
+            className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px]
+           border border-white border-opacity-10 rounded-lg shadow-md w-[250px] h-[320px] 
+           flex flex-col items-center justify-center text-center p-4"
+          >
+            <Image
+              src="/assets/work/prototype.svg"
+              alt="prototype"
+              width={85}
+              height={85}
+              quality={100}
+            />
+            <h3 className="mt-6 text-2xl font-bold text-gray-300">Prototype</h3>
+          </div>
+        </div>
 
-                {/* description */}
-                <p className="text-white/60">{service.description}</p>
+        <div className="flex items-center justify-center lg:w-[160px] h-full lg:h-[320px]">
+          <Image
+            src="/assets/work/arrow.svg"
+            alt="arrow"
+            quality={100}
+            width={32}
+            height={32}
+            className="object-contain w-full h-full lg:rotate-0 rotate-90"
+          />
+        </div>
 
-                {/* border */}
-                <div className="border-b border-white/20 w-full"></div>
-              </div>
-            );
-          })}
-        </motion.div>
-      </div>
+        <div
+          className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] 
+        border border-white border-opacity-10 rounded-lg shadow-md w-[300px] h-[300px] 
+        flex flex-col items-center justify-center text-center p-4"
+        >
+          <div
+            className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px]
+           border border-white border-opacity-10 rounded-lg shadow-md w-[250px] h-[300px] 
+           flex flex-col items-center justify-center text-center p-4"
+          >
+            <Image
+              src="/assets/work/development.svg"
+              alt="development"
+              width={85}
+              height={85}
+              quality={100}
+            />
+            <h3 className="mt-6 text-2xl font-bold text-gray-300">
+              Development
+            </h3>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center lg:w-[160px] h-full lg:h-[320px]">
+          <Image
+            src="/assets/work/arrow.svg"
+            alt="arrow"
+            quality={100}
+            width={32}
+            height={32}
+            className="object-contain w-full h-full lg:rotate-0 rotate-90"
+          />
+        </div>
+
+        <div
+          className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] 
+        border border-white border-opacity-10 rounded-lg shadow-md w-[300px] h-[300px] 
+        flex flex-col items-center justify-center text-center p-4"
+        >
+          <div
+            className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px]
+           border border-white border-opacity-10 rounded-lg shadow-md w-[250px] h-[320px] 
+           flex flex-col items-center justify-center text-center p-4"
+          >
+            <Image
+              src="/assets/work/submit.svg"
+              alt="submit"
+              width={85}
+              height={85}
+              quality={100}
+            />
+            <h3 className="mt-6 text-2xl font-bold text-gray-300">
+              Submit/Support
+            </h3>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 };

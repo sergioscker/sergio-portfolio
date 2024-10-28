@@ -2,25 +2,6 @@
 
 import { motion } from 'framer-motion';
 
-// icons
-import {
-  FaHtml5,
-  FaCss3,
-  FaGit,
-  FaJs,
-  FaFigma,
-  FaReact,
-  FaNode,
-} from 'react-icons/fa';
-
-import {
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiStyledcomponents,
-  SiVite,
-} from 'react-icons/si';
-
 // components
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
@@ -33,26 +14,33 @@ import {
 
 import { ScrollArea } from '@/components/ui/scroll-area';
 
+import Image from 'next/image';
+
 // experience data
 const experience = {
   icon: '/assets/resume/badge.svg',
   title: 'My experience',
-  description:
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi facere sint consequatur nisi iste?',
+
+  description: `I have been delving into full stack development with an emphasis on JavaScript, 
+  React.js, TypeScript, Node.js... always seeking continuous improvement.
+  In the last few months, I have dedicated myself to developing several projects, 
+  which are available in this Portfolio and GitHub, where I have been able to apply the knowledge I have acquired in practice. 
+  One of my most significant projects is this personal portfolio, which I developed entirely in ReactJS. 
+  This work not only demonstrates my ability to create modern and responsive interfaces, 
+  but also reflects my commitment to user experience and code quality.`,
+
   items: [
     {
-      company: 'E-commerce Startup',
-      position: 'Freelance Web Developer',
+      company: 'Digital Products',
+      position: 'Freelance Full Stack Development',
     },
   ],
 };
 
 //education data
 const education = {
-  icon: '/assets/resume/cap.svg',
   title: 'My education',
-  description:
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi facere sint consequatur nisi iste?',
+  description: '',
   items: [
     {
       institution: 'Dev Club',
@@ -66,52 +54,128 @@ const skills = {
   title: 'My skills',
   skillsList: [
     {
-      icon: <FaHtml5 />,
+      icon: (
+        <Image
+          src="/assets/skills/html.svg"
+          width={80}
+          height={80}
+          alt="html"
+        />
+      ),
       name: 'html 5',
     },
+    ,
     {
-      icon: <FaCss3 />,
-      name: 'css 3',
-    },
-    {
-      icon: <FaGit />,
+      icon: (
+        <Image src="/assets/skills/git.svg" width={80} height={80} alt="git" />
+      ),
       name: 'git',
     },
     {
-      icon: <FaJs />,
+      icon: (
+        <Image
+          src="/assets/skills/javascript.svg"
+          width={80}
+          height={80}
+          alt="javascript"
+        />
+      ),
       name: 'javascript',
     },
     {
-      icon: <FaFigma />,
-      name: 'figma designer',
-    },
-    {
-      icon: <FaReact />,
+      icon: (
+        <Image
+          src="/assets/skills/react.svg"
+          width={80}
+          height={80}
+          alt="react"
+        />
+      ),
       name: 'react.js',
     },
     {
-      icon: <FaNode />,
-      name: 'node.js',
-    },
-    {
-      icon: <SiNextdotjs />,
-      name: 'next.js',
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: 'tailwind.css',
-    },
-    {
-      icon: <SiTypescript />,
-      name: 'typescript',
-    },
-    {
-      icon: <SiStyledcomponents />,
+      icon: (
+        <Image
+          src="/assets/skills/styled.svg"
+          width={80}
+          height={80}
+          alt="styled-components"
+        />
+      ),
       name: 'styled-components',
     },
     {
-      icon: <SiVite />,
-      name: 'Vite + React',
+      icon: (
+        <Image
+          src="/assets/skills/figma.svg"
+          width={80}
+          height={80}
+          alt="figma"
+        />
+      ),
+      name: 'figma designer',
+    },
+
+    {
+      icon: (
+        <Image
+          src="/assets/skills/node.svg"
+          width={80}
+          height={80}
+          alt="node"
+        />
+      ),
+      name: 'node.js',
+    },
+    {
+      icon: (
+        <Image
+          src="/assets/skills/next.svg"
+          width={80}
+          height={80}
+          alt="next"
+        />
+      ),
+      name: 'next.js',
+    },
+    {
+      icon: (
+        <Image
+          src="/assets/skills/tailwind.svg"
+          width={80}
+          height={80}
+          alt="tailwind"
+        />
+      ),
+      name: 'tailwind.css',
+    },
+    {
+      icon: (
+        <Image
+          src="/assets/skills/typescript.svg"
+          width={80}
+          height={80}
+          alt="typescript"
+        />
+      ),
+      name: 'typescript',
+    },
+    {
+      icon: (
+        <Image src="/assets/skills/aws.svg" width={80} height={80} alt="aws" />
+      ),
+      name: 'Amazon Web Services',
+    },
+    {
+      icon: (
+        <Image
+          src="/assets/skills/vercel.svg"
+          width={80}
+          height={80}
+          alt="vercel"
+        />
+      ),
+      name: 'vercel',
     },
   ],
 };
@@ -119,8 +183,14 @@ const skills = {
 // About data
 const about = {
   title: 'About me',
-  description:
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi facere sint consequatur nisi iste?',
+
+  description: `Hello, I'm Sérgio Oliveira, a FullStack Developer at the beginning of my career, 
+  who traded the vibrant heat of Rio de Janeiro for the feminine winter in search of new opportunities. 
+  I firmly believe that technology has the power to transform lives and businesses, and I'm open to being part of this change.
+  My goal is to find an opportunity in the job market that allows me to apply what I've learned, while learning from experienced professionals and collaborating on the team's growth.
+  If you are looking for a motivated professional with a thirst for knowledge and a true passion for technology, I would love the opportunity to talk about how I can add value to your team.
+  Let's turn ideas into reality and create impactful solutions together!`,
+
   info: [
     {
       fieldName: 'Name',
@@ -136,7 +206,7 @@ const about = {
     },
     {
       fieldName: 'Languages',
-      fieldValue: 'English, Portugueses and Spanish',
+      fieldValue: 'English, Portugueses & Spanish',
     },
   ],
 };
@@ -169,9 +239,11 @@ const Resume = () => {
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center  xl:text-left">
                 <h3 className="text-4xl font-bold ">{experience.title}</h3>
+
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 ">
                   {experience.description}
                 </p>
+
                 <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] ">
                     {experience.items.map((item, index) => {
@@ -180,10 +252,18 @@ const Resume = () => {
                           key={index}
                           className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col items-center justify-center lg:items-start gap-1"
                         >
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                            {item.position}
-                          </h3>
+                          <div className="flex flex-row gap-2  items-start justify-between w-full">
+                            <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                              {item.position}
+                            </h3>
 
+                            <Image
+                              src="/assets/resume/badge.svg"
+                              alt="education-icon"
+                              width={16}
+                              height={16}
+                            />
+                          </div>
                           <div className="flex items-center gap-3 ">
                             {/* dot */}
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
@@ -212,9 +292,19 @@ const Resume = () => {
                           key={index}
                           className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col items-center justify-center lg:items-start gap-1"
                         >
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                            {item.institution}
-                          </h3>
+                          <div className="flex flex-row gap-2  items-start justify-between w-full">
+                            <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                              {item.institution}
+                            </h3>
+
+                            <Image
+                              src="/assets/resume/cap.svg"
+                              quality={100}
+                              width={16}
+                              height={16}
+                              alt="formation"
+                            />
+                          </div>
 
                           <div className="flex items-center gap-3 ">
                             {/* dot */}
@@ -266,7 +356,7 @@ const Resume = () => {
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
 
-                <p className="max-w-[600px] text-white/60 mx-auto xl:max-0">
+                <p className="w-full text-white/60 mx-auto xl:max-0">
                   {about.description}
                 </p>
 
@@ -278,7 +368,7 @@ const Resume = () => {
                         className="flex items-center justify-center xl:justify-start gap-4"
                       >
                         <span className="text-white/60 ">{item.fieldName}</span>
-                        <span className="text-xl">{item.fieldValue}</span>
+                        <span className="text-lg">{item.fieldValue}</span>
                       </li>
                     );
                   })}
