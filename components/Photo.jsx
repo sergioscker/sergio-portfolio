@@ -28,8 +28,7 @@ const Photo = () => {
             priority
             quality={100}
             fill
-            className="object-contain
-            "
+            className="object-contain"
           />
         </motion.div>
 
@@ -43,7 +42,7 @@ const Photo = () => {
           <motion.circle
             cx="253"
             cy="253"
-            r="293"
+            r="296"
             stroke="#0086b0"
             strokeWidth="4"
             strokeLinejoin="round"

@@ -13,7 +13,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: 'Portfolio | FullStack Developer',
+  title: 'Portfolio',
   description:
     'Check out the portfolio of [Sérgio Oliveira], specialist in [JavaScript, React, Node, TypeScript, NoSql, SQL].',
   keywords: 'portfolio, web developer, designer, JavaScript, React.js, Next.js',

@@ -11,13 +11,14 @@ const Home = () => {
     <section className="h-full p-10 mt-10">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
-          {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
+            {/* text */}
+
             <span className="text-xl">
-              Software Developer | FullStack Developer
+              Software Developer | Frontend Developer
             </span>
 
-            <h1 className="h1 mb-6">
+            <h1 className="h1 mb-6 mt-6">
               Hello I&apos;m <br />
               <span className="text-accent">Sérgio Oliveira</span>
             </h1>
@@ -56,7 +57,7 @@ const Home = () => {
           </div>
 
           {/* photo */}
-          <div className="order-1 mb-8 xl:order-none  xl:mb-0">
+          <div className="flex items-center justify-center order-1 mb-10 xl:order-none xl:mb-0">
             <Photo />
           </div>
         </div>

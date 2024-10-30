@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 
+import Image from 'next/image';
+
 // components
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
@@ -13,8 +15,6 @@ import {
 } from '@/components/ui/tooltip';
 
 import { ScrollArea } from '@/components/ui/scroll-area';
-
-import Image from 'next/image';
 
 // experience data
 const experience = {
@@ -185,7 +185,7 @@ const about = {
   title: 'About me',
 
   description: `Hello, I'm Sérgio Oliveira, a FullStack Developer at the beginning of my career, 
-  who traded the vibrant heat of Rio de Janeiro for the feminine winter in search of new opportunities. 
+  who traded the vibrant heat of Rio de Janeiro for the European winter in search of new opportunities. 
   I firmly believe that technology has the power to transform lives and businesses, and I'm open to being part of this change.
   My goal is to find an opportunity in the job market that allows me to apply what I've learned, while learning from experienced professionals and collaborating on the team's growth.
   If you are looking for a motivated professional with a thirst for knowledge and a true passion for technology, I would love the opportunity to talk about how I can add value to your team.
@@ -353,21 +353,21 @@ const Resume = () => {
               value="about"
               className="w-full text-center xl:text-left"
             >
-              <div className="flex flex-col gap-[30px]">
+              <div className="flex flex-col gap-[30px] overflow-x-hidden">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
 
                 <p className="w-full text-white/60 mx-auto xl:max-0">
                   {about.description}
                 </p>
 
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[750px] mx-auto xl:mx-0">
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[750px] mx-3 xl:mx-0">
                   {about.info.map((item, index) => {
                     return (
                       <li
                         key={index}
-                        className="flex items-center justify-center xl:justify-start gap-4"
+                        className="flex items-center justify-center px-2 xl:justify-start gap-5"
                       >
-                        <span className="text-white/60 ">{item.fieldName}</span>
+                        <span className="text-white/60">{item.fieldName}</span>
                         <span className="text-lg">{item.fieldValue}</span>
                       </li>
                     );
