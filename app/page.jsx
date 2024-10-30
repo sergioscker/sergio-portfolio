@@ -1,4 +1,7 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
+
 import { FiDownload } from 'react-icons/fi';
 
 //components
@@ -11,9 +14,8 @@ const Home = () => {
     <section className="h-full p-10 mt-10">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+          {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            {/* text */}
-
             <span className="text-xl">
               Software Developer | Frontend Developer
             </span>

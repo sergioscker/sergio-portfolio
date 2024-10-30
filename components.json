@@ -6,7 +6,7 @@
   "tailwind": {
     "config": "tailwind.config.js",
     "css": "app/globals.css",
-    "baseColor": "slate",
+    "baseColor": "zinc",
     "cssVariables": false,
     "prefix": ""
   },
@@ -14,7 +14,8 @@
     "components": "@/components",
     "utils": "@/lib/utils",
     "ui": "@/components/ui",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
+    "magicui": "@/components/magicui",
+    "hooks": "@/hooks",
+    "lib": "@/lib"
   }
 }
