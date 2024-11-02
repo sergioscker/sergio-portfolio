@@ -1,5 +1,9 @@
 'use client';
 
+import { useState } from 'react';
+
+import Link from 'next/link';
+
 import {
   Sheet,
   SheetContent,
@@ -9,41 +13,28 @@ import {
 
 import { usePathname } from 'next/navigation';
 
-import Link from 'next/link';
-
 import { CiMenuBurger } from 'react-icons/ci';
 
 import { VisuallyHidden } from '@reach/visually-hidden';
 
 const links = [
-  {
-    name: 'home',
-    path: '/',
-  },
-  {
-    name: 'services',
-    path: '/services',
-  },
-  {
-    name: 'resume',
-    path: '/resume',
-  },
-  {
-    name: 'work',
-    path: '/work',
-  },
-  {
-    name: 'contact',
-    path: '/contact',
-  },
+  { name: 'home', path: '/' },
+  { name: 'services', path: '/services' },
+  { name: 'resume', path: '/resume' },
+  { name: 'work', path: '/work' },
+  { name: 'contact', path: '/contact' },
 ];
 
 const MobileNav = () => {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Sheet>
-      <SheetTrigger className="flex justify-center items-center">
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+      <SheetTrigger
+        className="flex justify-center items-center"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <CiMenuBurger className="text-[32px] text-accent" />
       </SheetTrigger>
 
@@ -69,6 +60,7 @@ const MobileNav = () => {
               <Link
                 href={link.path}
                 key={index}
+                onClick={() => setIsOpen(false)} // Fecha o menu ao clicar no link
                 className={`${
                   link.path === pathname &&
                   'text-accent border-b-2 border-accent'

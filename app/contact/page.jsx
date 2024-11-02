@@ -1,6 +1,9 @@
 'use client';
 
+import { useState } from 'react';
+
 import { motion } from 'framer-motion';
+
 import Link from 'next/link';
 
 // components
@@ -8,7 +11,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
-// icons
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from 'react-icons/fa';
 
 const info = [
@@ -46,6 +48,48 @@ const info = [
 ];
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Mensagem enviada com sucesso!');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phoneNumber: '',
+          message: '',
+        });
+      } else {
+        alert('Erro ao enviar a mensagem.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('Erro ao enviar a mensagem.');
+    }
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -59,21 +103,51 @@ const Contact = () => {
         <div className="flex flex-col pt-10 mt-5 xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:w-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+            <form
+              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+              onSubmit={handleSubmit}
+            >
               <h3 className="text-4xl text-accent">Let&#39;s work together</h3>
 
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="First name" />
-                <Input type="lastname" placeholder="Last name" />
-                <Input type="email" placeholder="Email address" />
-                <Input type="phonenumber" placeholder="Phone number" />
+                <Input
+                  type="text"
+                  name="firstName"
+                  placeholder="First name"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                />
+                <Input
+                  type="text"
+                  name="lastName"
+                  placeholder="Last name"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                />
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email address"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+                <Input
+                  type="text"
+                  name="phoneNumber"
+                  placeholder="Phone number"
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                />
               </div>
 
               {/* textarea */}
               <Textarea
+                name="message"
                 className="h-[200px]"
                 placeholder="Type your message here."
+                value={formData.message}
+                onChange={handleChange}
               />
 
               {/* button submit */}
