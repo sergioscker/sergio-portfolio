@@ -32,7 +32,6 @@ import {
 } from '@/components/ui/tooltip';
 
 //components
-
 import Link from 'next/link';
 import Image from 'next/image';
 import WorkSliderBtns from '@/components/WorkSliderBtns';
@@ -245,7 +244,7 @@ const Work = () => {
       }}
       className="min-h-[30vh] flex flex-col justify-center py-12 xl:p-12 xl:mt-5"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto pt-18 mt-20">
         <div className="flex flex-col xl:flex-row xl:gap-[30px] ">
           {/* projects container */}
           <div

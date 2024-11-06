@@ -20,7 +20,7 @@ export const metadata = {
   openGraph: {
     title: `Sérgio Oliveira Porfolio`,
     description:
-      'Discover high quality projects and design by [Sérgio Oliveira].',
+      'Discover high quality projects and design by Sérgio Oliveira.',
     url: 'https://sergio-portfolio-six.vercel.app',
     type: 'website',
     images: [

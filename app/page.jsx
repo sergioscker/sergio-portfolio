@@ -11,9 +11,9 @@ import Link from 'next/link';
 
 const Home = () => {
   return (
-    <section className="h-full p-10 mt-10">
+    <section className="h-full pt-20 mt-10">
       <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+        <div className="flex flex-col xl:flex-row items-center justify-around xl:pt-8 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">

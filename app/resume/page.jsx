@@ -180,9 +180,13 @@ const about = {
 
   description: `Hello, I'm Sérgio Oliveira, a FullStack Developer at the beginning of my career, 
   who traded the vibrant heat of Rio de Janeiro for the European winter in search of new opportunities. 
-  I firmly believe that technology has the power to transform lives and businesses, and I'm open to being part of this change.
-  My goal is to find an opportunity in the job market that allows me to apply what I've learned, while learning from experienced professionals and collaborating on the team's growth.
-  If you are looking for a motivated professional with a thirst for knowledge and a true passion for technology, I would love the opportunity to talk about how I can add value to your team.
+  I firmly believe that technology has the power to transform lives and businesses, 
+  and I'm open to being part of this change.
+  My goal is to find an opportunity in the job market that allows me to apply what I've learned, 
+  while learning from experienced professionals and collaborating on the team's growth.
+  If you are looking for a motivated professional with a thirst for knowledge
+   and a true passion for technology, I would love the opportunity to talk about
+    how I can add value to your team.
   Let's turn ideas into reality and create impactful solutions together!`,
 
   info: [
@@ -215,7 +219,7 @@ const Resume = () => {
       }}
       className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto mt-20">
         <Tabs
           defaultChecked="experience"
           className="flex flex-col xl:flex-row gap-[60px] "
@@ -231,22 +235,22 @@ const Resume = () => {
           <div className="min-h-[70vh] w-full">
             {/* experience */}
             <TabsContent value="experience" className="w-full pt-3">
-              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+              <div className="flex flex-col gap-[30px] text-center">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
 
-                <p className="max-w-[700px] text-white/60 mx-auto xl:mx-0 ">
+                <p className="max-w-[700px] text-white/60 mx-auto">
                   {experience.description}
                 </p>
 
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] ">
+                  <ul className="flex items-center justify-center gap-[30px]">
                     {experience.items.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col items-center justify-center lg:items-start gap-1"
+                          className="bg-[#232329] min-h-[184px] max-w-[400px] px-10 rounded-xl flex flex-col items-center justify-center lg:items-start gap-3"
                         >
-                          <div className="flex flex-row gap-2  items-start justify-between w-full">
+                          <div className="flex flex-row gap-2 items-start justify-between w-full">
                             <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
                               {item.position}
                             </h3>
@@ -273,9 +277,10 @@ const Resume = () => {
 
             {/* education */}
             <TabsContent value="education" className="w-full">
-              <div className="flex flex-col gap-[30px] text-center  xl:text-left">
-                <h3 className="text-4xl font-bold ">{education.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 ">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">{education.title}</h3>
+
+                <p className="max-w-[200px] text-white/60 mx-auto xl:mx-0 ">
                   {education.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -284,7 +289,7 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col items-center justify-center lg:items-start gap-1"
+                          className="bg-[#232329] min-h-[184px] max-w-[400px] py-6 px-10 rounded-xl flex flex-col items-center justify-center lg:items-start gap-1"
                         >
                           <div className="flex flex-row gap-2  items-start justify-between w-full">
                             <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
@@ -321,28 +326,23 @@ const Resume = () => {
             </TabsContent>
 
             {/* about */}
-            <TabsContent
-              value="about"
-              className="w-full text-center xl:text-left"
-            >
-              <div className="flex flex-col gap-[30px] overflow-x-hidden">
+            <TabsContent value="about" className="h-full w-full">
+              <div className="flex flex-col gap-[40px] text-center">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
 
-                <p className="w-full text-white/60 mx-auto xl:max-0">
+                <p className="max-w-[800px] text-white/60 mx-auto xl:max-0">
                   {about.description}
                 </p>
 
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[750px] mx-3 xl:mx-0">
+                <ul className="grid grid-cols-1 xl:grid-cols-2 xl:text-center gap-y-6 max-w-[800px] mx-auto">
                   {about.info.map((item, index) => {
                     return (
                       <li
                         key={index}
                         className="flex items-center justify-center px-2 xl:justify-start gap-5"
                       >
-                        <span className="text-white/60">{item.fieldName}</span>
-                        <span className="text-md xl:text-lg">
-                          {item.fieldValue}
-                        </span>
+                        <p className="text-white/60">{item.fieldName}</p>
+                        <p className="text-md xl:text-lg">{item.fieldValue}</p>
                       </li>
                     );
                   })}

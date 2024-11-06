@@ -7,11 +7,10 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { firstName, lastName, email, phoneNumber, message } = req.body;
 
-    // Configurar o transportador de e-mail
     const transporter = nodemailer.createTransport({
       host: 'smtp-mail.outlook.com',
       port: 587,
-      secure: false, // true para 465, false para outras portas
+      secure: false,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -35,7 +34,6 @@ export default async function handler(req, res) {
         `,
       });
 
-      // Enviar uma resposta de sucesso
       res.status(200).json({ message: 'E-mail enviado com sucesso!' });
     } catch (error) {
       console.error(error);

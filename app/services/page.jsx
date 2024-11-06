@@ -11,14 +11,19 @@ const Services = () => {
       </h2>
 
       <motion.div
-        className="flex flex-col md:flex-row justify-between items-center space-x-0 w-full"
+        className="flex flex-col xl:flex-row justify-around items-center lg:space-y-0 
+        space-y-6 lg:space-x-6 w-full"
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
           transition: { delay: 2, duration: 0.4, ease: 'easeIn' },
         }}
       >
-        <div className="flex flex-col items-center w-full max-w-[350px] xl:max-w-[260px] lg:mt-0 mt-6 mb-6 lg:mb-8">
+        {/* Briefing */}
+        <div
+          className="flex flex-col items-center w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px]
+        xl:max-w-[250px] 2xl:max-w-[300px]"
+        >
           <div
             className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px]
            border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] 
@@ -33,8 +38,8 @@ const Services = () => {
                 src="/assets/work/briefing.svg"
                 alt="briefing"
                 quality={100}
-                width={110}
-                height={110}
+                width={100}
+                height={100}
               />
               <h3 className="mt-4 text-2xl font-bold text-gray-300">
                 Briefing
@@ -43,18 +48,23 @@ const Services = () => {
           </div>
         </div>
 
+        {/* Arrow */}
         <div className="flex items-center justify-center xl:w-[160px] h-full xl:h-[320px]">
           <Image
             src="/assets/work/arrow.svg"
             alt="arrow"
             quality={100}
-            width={28}
-            height={28}
+            width={32}
+            height={32}
             className="object-contain w-full h-full xl:rotate-0 rotate-90"
           />
         </div>
 
-        <div className="flex flex-col items-center w-full max-w-[350px] xl:max-w-[260px] lg:mt-0 mt-6 mb-6 lg:mb-8">
+        {/* Prototype */}
+        <div
+          className="flex flex-col items-center w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px]
+        xl:max-w-[250px] 2xl:max-w-[300px]"
+        >
           <div
             className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] 
           border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] flex flex-col 
@@ -69,8 +79,8 @@ const Services = () => {
                 src="/assets/work/prototype.svg"
                 alt="briefing"
                 quality={100}
-                width={110}
-                height={110}
+                width={100}
+                height={100}
               />
               <h3 className="mt-4 text-2xl font-bold text-gray-300">
                 Prototype
@@ -79,18 +89,23 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center lg:w-[160px] h-full lg:h-[320px]">
+        {/* Arrow */}
+        <div className="flex items-center justify-center xl:w-[160px] h-full xl:h-[320px]">
           <Image
             src="/assets/work/arrow.svg"
             alt="arrow"
             quality={100}
             width={32}
             height={32}
-            className="object-contain w-full h-full lg:rotate-0 rotate-90"
+            className="object-contain w-full h-full xl:rotate-0 rotate-90"
           />
         </div>
 
-        <div className="flex flex-col items-center w-full max-w-[350px] xl:max-w-[260px] lg:mt-0 mt-6 mb-6 lg:mb-8">
+        {/* Development */}
+        <div
+          className="flex flex-col items-center w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px]
+        xl:max-w-[250px] 2xl:max-w-[300px]"
+        >
           <div
             className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px]
            border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] flex flex-col
@@ -105,8 +120,8 @@ const Services = () => {
                 src="/assets/work/development.svg"
                 alt="briefing"
                 quality={100}
-                width={110}
-                height={110}
+                width={100}
+                height={100}
               />
               <h3 className="mt-4 text-2xl font-bold text-gray-300">
                 Development
@@ -115,18 +130,23 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center lg:w-[160px] h-full lg:h-[320px]">
+        {/* Arrow */}
+        <div className="flex items-center justify-center xl:w-[160px] h-full xl:h-[320px]">
           <Image
             src="/assets/work/arrow.svg"
             alt="arrow"
             quality={100}
             width={32}
             height={32}
-            className="object-contain w-full h-full lg:rotate-0 rotate-90"
+            className="object-contain w-full h-full xl:rotate-0 rotate-90"
           />
         </div>
 
-        <div className="flex flex-col items-center w-full max-w-[350px] xl:max-w-[260px] lg:mt-0 mt-6 mb-6 lg:mb-8">
+        {/* Submit */}
+        <div
+          className="flex flex-col items-center w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px]
+        xl:max-w-[250px] 2xl:max-w-[300px]"
+        >
           <div
             className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px]
            border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] flex flex-col 
@@ -141,8 +161,8 @@ const Services = () => {
                 src="/assets/work/submit.svg"
                 alt="briefing"
                 quality={100}
-                width={110}
-                height={110}
+                width={100}
+                height={100}
               />
               <h3 className="mt-4 text-2xl font-bold text-gray-300">
                 Submit/Support

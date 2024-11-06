@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 import { motion } from 'framer-motion';
 
@@ -50,9 +49,6 @@ const info = [
 ];
 
 const Contact = () => {
-  const router = useRouter();
-  const [isClient, setIsClient] = useState(false);
-
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -61,10 +57,6 @@ const Contact = () => {
     message: '',
   });
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   const handleChange = (data) => {
     setFormData({ ...formData, [data.target.name]: data.target.value });
   };
@@ -72,7 +64,7 @@ const Contact = () => {
   const handleSubmit = async (data) => {
     data.preventDefault();
     const response = await toast.promise(
-      fetch('/api/sendEmail', {
+      fetch('/sendEmail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -81,21 +73,17 @@ const Contact = () => {
       }),
       {
         pending: 'Checking your data...',
-        success: {
-          render() {
-            setTimeout(() => {
-              router.push('/');
-            }, 2000);
-            return 'Message sent successfully 👌';
-          },
-        },
+        success: 'Message sent successfully 👌',
         error: 'There was an error sending your message 🤯',
       },
     );
-    setFormData(response);
-  };
 
-  if (!isClient) return null;
+    if (response.ok) {
+      setTimeout(() => {
+        window.location.href = '/'; // redirect to home page
+      }, 2000);
+    }
+  };
 
   return (
     <motion.section
@@ -107,13 +95,10 @@ const Contact = () => {
       className="py-6 "
     >
       <div className="container mx-auto">
-        <div className="flex flex-col pt-10 mt-5 xl:flex-row gap-[30px]">
+        <div className="flex flex-col pt-20 mt-10 xl:flex-row gap-[30px]">
           {/* form */}
-          <div className="xl:w-[54%] order-2 xl:order-none">
-            <form
-              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
-              onSubmit={handleSubmit}
-            >
+          <div className="xl:w-[50%] order-2 xl:order-none">
+            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
               <h3 className="text-4xl text-accent">Let's work together</h3>
 
               {/* input */}
@@ -158,7 +143,12 @@ const Contact = () => {
               />
 
               {/* button submit */}
-              <Button type="submit" size="md" className="max-w-40">
+              <Button
+                type="submit"
+                onSubmit={handleSubmit}
+                size="md"
+                className="max-w-40"
+              >
                 Send message
               </Button>
             </form>
