@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import { motion } from 'framer-motion';
@@ -51,6 +51,7 @@ const info = [
 
 const Contact = () => {
   const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -59,6 +60,10 @@ const Contact = () => {
     phoneNumber: '',
     message: '',
   });
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleChange = (data) => {
     setFormData({ ...formData, [data.target.name]: data.target.value });
@@ -75,21 +80,22 @@ const Contact = () => {
         body: JSON.stringify(formData),
       }),
       {
-        pending: 'Checking your data',
+        pending: 'Checking your data...',
         success: {
           render() {
             setTimeout(() => {
               router.push('/');
             }, 2000);
-            return 'Welcome👌';
+            return 'Message sent successfully 👌';
           },
         },
-        error: 'Make sure your email is correct 🤯',
+        error: 'There was an error sending your message 🤯',
       },
     );
-
     setFormData(response);
   };
+
+  if (!isClient) return null;
 
   return (
     <motion.section
@@ -108,7 +114,7 @@ const Contact = () => {
               className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
               onSubmit={handleSubmit}
             >
-              <h3 className="text-4xl text-accent">Let&#39;s work together</h3>
+              <h3 className="text-4xl text-accent">Let's work together</h3>
 
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -164,26 +170,24 @@ const Contact = () => {
           mb-8 xl:mb-0 pt-5 overflow-x-hidden"
           >
             <ul className="flex flex-col gap-10">
-              {info.map((item, index) => {
-                return (
-                  <li
-                    key={index}
-                    className="flex flex-col xl:flex-row items-center gap-6"
-                  >
-                    <div
-                      className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c]
+              {info.map((item, index) => (
+                <li
+                  key={index}
+                  className="flex flex-col xl:flex-row items-center gap-6"
+                >
+                  <div
+                    className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c]
                      text-accent rounded-md flex items-center justify-center"
-                    >
-                      <div className="text-[28px]">{item.icon}</div>
-                    </div>
+                  >
+                    <div className="text-[28px]">{item.icon}</div>
+                  </div>
 
-                    <div className="flex-1">
-                      <p className="text-white/60">{item.title}</p>
-                      <h3 className="text-xl">{item.description}</h3>
-                    </div>
-                  </li>
-                );
-              })}
+                  <div className="flex-1">
+                    <p className="text-white/60">{item.title}</p>
+                    <h3 className="text-xl">{item.description}</h3>
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
