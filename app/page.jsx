@@ -34,7 +34,7 @@ const Home = () => {
             {/* btn and sociais */}
             <div className="flex flex-col xl:flex-row items-center gap-8 ">
               <Link
-                href="/assets/resume.pdf"
+                href="/assets/resume/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >

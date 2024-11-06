@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useNavigate } from 'react';
+import { useRouter } from 'next/router';
 
 import { motion } from 'framer-motion';
 
@@ -50,7 +50,7 @@ const info = [
 ];
 
 const Contact = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -67,26 +67,24 @@ const Contact = () => {
   const handleSubmit = async (data) => {
     data.preventDefault();
     const response = await toast.promise(
-      '/api/sendEmail',
-      {
+      fetch('/api/sendEmail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
-      },
-
+      }),
       {
         pending: 'Checking your data',
         success: {
           render() {
             setTimeout(() => {
-              navigate('/');
+              router.push('/');
             }, 2000);
             return 'Welcome👌';
           },
         },
-        error: 'Make sure your email are correct 🤯',
+        error: 'Make sure your email is correct 🤯',
       },
     );
 

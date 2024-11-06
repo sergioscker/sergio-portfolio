@@ -9,10 +9,15 @@ export default async function handler(req, res) {
 
     // Configurar o transportador de e-mail
     const transporter = nodemailer.createTransport({
-      service: 'microsoft',
+      host: 'smtp-mail.outlook.com',
+      port: 587,
+      secure: false, // true para 465, false para outras portas
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
+      },
+      tls: {
+        ciphers: 'SSLv3',
       },
     });
 
