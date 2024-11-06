@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useNavigate } from 'react';
 
 import { motion } from 'framer-motion';
 
@@ -12,6 +13,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const info = [
   {
@@ -48,6 +50,8 @@ const info = [
 ];
 
 const Contact = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -56,38 +60,37 @@ const Contact = () => {
     message: '',
   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (data) => {
+    setFormData({ ...formData, [data.target.name]: data.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch('/api/sendEmail', {
+  const handleSubmit = async (data) => {
+    data.preventDefault();
+    const response = await toast.promise(
+      '/api/sendEmail',
+      {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
-      });
+      },
 
-      if (response.ok) {
-        alert('Mensagem enviada com sucesso!');
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phoneNumber: '',
-          message: '',
-        });
-      } else {
-        alert('Erro ao enviar a mensagem.');
-      }
-    } catch (error) {
-      console.error(error);
-      alert('Erro ao enviar a mensagem.');
-    }
+      {
+        pending: 'Checking your data',
+        success: {
+          render() {
+            setTimeout(() => {
+              navigate('/');
+            }, 2000);
+            return 'Welcome👌';
+          },
+        },
+        error: 'Make sure your email are correct 🤯',
+      },
+    );
+
+    setFormData(response);
   };
 
   return (

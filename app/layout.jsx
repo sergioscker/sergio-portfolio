@@ -18,7 +18,7 @@ export const metadata = {
     'Check out the portfolio of [Sérgio Oliveira], specialist in [JavaScript, React, Node, TypeScript, NoSql, SQL].',
   keywords: 'portfolio, web developer, designer, JavaScript, React.js, Next.js',
   openGraph: {
-    title: `[Sérgio Oliveira's] Porfolio`,
+    title: `Sérgio Oliveira Porfolio`,
     description:
       'Discover high quality projects and design by [Sérgio Oliveira].',
     url: 'https://sergio-portfolio-six.vercel.app',
@@ -28,7 +28,7 @@ export const metadata = {
         url: '',
         width: 800,
         height: 600,
-        alt: '',
+        alt: 'logo',
       },
     ],
   },

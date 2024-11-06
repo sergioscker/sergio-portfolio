@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
@@ -6,7 +9,7 @@ export default async function handler(req, res) {
 
     // Configurar o transportador de e-mail
     const transporter = nodemailer.createTransport({
-      service: 'outlook',
+      service: 'microsoft',
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
