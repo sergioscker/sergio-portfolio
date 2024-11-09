@@ -45,16 +45,16 @@ const MobileNav = () => {
         </SheetTitle>
 
         {/* logo */}
-        <div className="mt-32 mb-40 text-center text-2xl ">
+        <div className="mt-28 pb-14 mb-20 text-center text-2xl">
           <Link href="/">
-            <h1 className="text-4xl font-semibold ">
+            <h1 className="text-4xl font-semibold">
               Sergio<span className="text-accent">.</span>
             </h1>
           </Link>
         </div>
 
         {/* nav */}
-        <nav className="flex flex-col justify-center items-center gap-8">
+        <nav className="flex flex-col justify-center items-center gap-6 mt-10">
           {links.map((link, index) => {
             return (
               <Link

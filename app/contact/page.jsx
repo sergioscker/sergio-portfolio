@@ -2,18 +2,28 @@
 
 import { useState } from 'react';
 
+// animations
 import { motion } from 'framer-motion';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
-// components
+//components
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
+//icons
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from 'react-icons/fa';
-import { toast } from 'react-toastify';
 
+// notifications
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// api emailJS
+import emailjs from 'emailjs-com';
+
+// contact options
 const info = [
   {
     icon: (
@@ -49,6 +59,7 @@ const info = [
 ];
 
 const Contact = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -57,31 +68,51 @@ const Contact = () => {
     message: '',
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (data) => {
     setFormData({ ...formData, [data.target.name]: data.target.value });
   };
 
   const handleSubmit = async (data) => {
     data.preventDefault();
-    const response = await toast.promise(
-      fetch('/sendEmail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      }),
-      {
-        pending: 'Checking your data...',
-        success: 'Message sent successfully 👌',
-        error: 'There was an error sending your message 🤯',
-      },
-    );
+    setLoading(true);
 
-    if (response.ok) {
-      setTimeout(() => {
-        window.location.href = '/'; // redirect to home page
-      }, 2000);
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+
+    const templateParams = {
+      to_name: 'Sergio',
+      from_name: `${formData.firstName} ${formData.lastName}`,
+      email: formData.email,
+      phone_number: formData.phoneNumber,
+      message: formData.message,
+    };
+
+    try {
+      await emailjs.send(serviceID, templateID, templateParams, userID);
+      toast.success('Message sent successfully!', {
+        position: 'top-right',
+        autoClose: 2000,
+      });
+
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phoneNumber: '',
+        message: '',
+      });
+
+      router.push('/');
+    } catch (error) {
+      toast.error('Failed to send message. Please try again.', {
+        position: 'top-right',
+        autoClose: 2000,
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -92,16 +123,19 @@ const Contact = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
       }}
-      className="py-6 "
+      className="py-6"
     >
+      <ToastContainer />
       <div className="container mx-auto">
-        <div className="flex flex-col pt-20 mt-10 xl:flex-row gap-[30px]">
+        <div className="flex flex-col pt-16 mt-8 xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:w-[50%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+            <form
+              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+              onSubmit={handleSubmit}
+            >
               <h3 className="text-4xl text-accent">Let's work together</h3>
 
-              {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
                   type="text"
@@ -125,7 +159,7 @@ const Contact = () => {
                   onChange={handleChange}
                 />
                 <Input
-                  type="text"
+                  type="number"
                   name="phoneNumber"
                   placeholder="Phone number"
                   value={formData.phoneNumber}
@@ -133,7 +167,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* textarea */}
               <Textarea
                 name="message"
                 className="h-[200px]"
@@ -142,14 +175,13 @@ const Contact = () => {
                 onChange={handleChange}
               />
 
-              {/* button submit */}
               <Button
                 type="submit"
-                onSubmit={handleSubmit}
                 size="md"
                 className="max-w-40"
+                disabled={loading}
               >
-                Send message
+                {loading ? 'Sending...' : 'Send message'}
               </Button>
             </form>
           </div>

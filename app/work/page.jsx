@@ -39,6 +39,28 @@ import WorkSliderBtns from '@/components/WorkSliderBtns';
 const projects = [
   {
     id: '01',
+    title: 'Tech Solutions',
+
+    category: 'FrontEnd UI',
+
+    description: `I developed a Landing Page for Virtual Headsets using React.js, 
+    with styling done through the styled-components library.`,
+
+    image: '/assets/work/tech-solutions.png',
+
+    live: 'https://tech-solutions-kappa.vercel.app',
+
+    github: 'https://github.com/sergioliveira-developer/tech-solutions',
+
+    stack: [
+      { icon: <DiJavascript size={60} />, name: 'javascript' },
+      { icon: <DiReact size={60} />, name: 'react.js' },
+      { icon: <DiHtml5 size={60} />, name: 'html5' },
+    ],
+  },
+
+  {
+    id: '02',
     title: 'Burger Shop',
 
     category: 'FullStack',
@@ -62,28 +84,6 @@ const projects = [
       { icon: <DiPostgresql size={60} />, name: 'postgres' },
       { icon: <DiMongodb size={60} />, name: 'mongoDB' },
       { icon: <DiAws size={60} />, name: 'amazon web services' },
-    ],
-  },
-
-  {
-    id: '02',
-    title: 'Tech Solutions',
-
-    category: 'FrontEnd UI',
-
-    description: `I developed a Landing Page for Virtual Headsets using React.js, 
-    with styling done through the styled-components library.`,
-
-    image: '/assets/work/tech-solutions.png',
-
-    live: 'https://tech-solutions-kappa.vercel.app',
-
-    github: 'https://github.com/sergioliveira-developer/tech-solutions',
-
-    stack: [
-      { icon: <DiJavascript size={60} />, name: 'javascript' },
-      { icon: <DiReact size={60} />, name: 'react.js' },
-      { icon: <DiHtml5 size={60} />, name: 'html5' },
     ],
   },
 
@@ -113,7 +113,7 @@ const projects = [
     id: '04',
     title: 'Finantial Control',
 
-    category: 'FullStack - TypeScript',
+    category: 'FullStack TypeScript',
 
     description: `Financial Control is a full-stack application designed to manage and track personal finances. 
     It includes a backend API built with Node.js and TypeScript and a responsive frontend interface using React and Vite.
@@ -242,9 +242,9 @@ const Work = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
       }}
-      className="min-h-[30vh] flex flex-col justify-center py-12 xl:p-12 xl:mt-5"
+      className="min-h-[30vh] flex flex-col justify-center py-12 xl:p-10 xl:mt-5"
     >
-      <div className="container mx-auto pt-18 mt-20">
+      <div className="container mx-auto pt-18 mt-16">
         <div className="flex flex-col xl:flex-row xl:gap-[30px] ">
           {/* projects container */}
           <div
@@ -258,7 +258,10 @@ const Work = () => {
               </div>
 
               {/* projects category */}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent-hover transition-all duration-500 capitalize">
+              <h2
+                className="text-[42px] font-bold leading-none text-white
+               group-hover:text-accent-hover transition-all duration-500 capitalize"
+              >
                 {project.category} project
               </h2>
 

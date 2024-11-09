@@ -34,145 +34,145 @@ const experience = {
 //education data
 const education = {
   title: 'My education',
-  description: '',
+
   items: [
     {
-      institution: 'Dev Club',
+      institution: 'Dev Club Developer Training',
       degree: 'FullStack Developer',
     },
   ],
 };
 
 // skills data
-const skills = {
-  title: 'My skills',
-  skillsList: [
-    {
-      icon: (
-        <Image
-          src="/assets/skills/html.svg"
-          width={80}
-          height={80}
-          alt="html"
-        />
-      ),
-      name: 'html 5',
-    },
-    ,
-    {
-      icon: (
-        <Image src="/assets/skills/git.svg" width={80} height={80} alt="git" />
-      ),
-      name: 'git',
-    },
-    {
-      icon: (
-        <Image
-          src="/assets/skills/javascript.svg"
-          width={80}
-          height={80}
-          alt="javascript"
-        />
-      ),
-      name: 'javascript',
-    },
-    {
-      icon: (
-        <Image
-          src="/assets/skills/react.svg"
-          width={80}
-          height={80}
-          alt="react"
-        />
-      ),
-      name: 'react.js',
-    },
-    {
-      icon: (
-        <Image
-          src="/assets/skills/styled.svg"
-          width={80}
-          height={80}
-          alt="styled-components"
-        />
-      ),
-      name: 'styled-components',
-    },
-    {
-      icon: (
-        <Image
-          src="/assets/skills/figma.svg"
-          width={80}
-          height={80}
-          alt="figma"
-        />
-      ),
-      name: 'figma designer',
-    },
+// const skills = {
+//   title: 'My skills',
+//   skillsList: [
+//     {
+//       icon: (
+//         <Image
+//           src="/assets/skills/html.svg"
+//           width={80}
+//           height={80}
+//           alt="html"
+//         />
+//       ),
+//       name: 'html 5',
+//     },
+//     ,
+//     {
+//       icon: (
+//         <Image src="/assets/skills/git.svg" width={80} height={80} alt="git" />
+//       ),
+//       name: 'git',
+//     },
+//     {
+//       icon: (
+//         <Image
+//           src="/assets/skills/javascript.svg"
+//           width={80}
+//           height={80}
+//           alt="javascript"
+//         />
+//       ),
+//       name: 'javascript',
+//     },
+//     {
+//       icon: (
+//         <Image
+//           src="/assets/skills/react.svg"
+//           width={80}
+//           height={80}
+//           alt="react"
+//         />
+//       ),
+//       name: 'react.js',
+//     },
+//     {
+//       icon: (
+//         <Image
+//           src="/assets/skills/styled.svg"
+//           width={80}
+//           height={80}
+//           alt="styled-components"
+//         />
+//       ),
+//       name: 'styled-components',
+//     },
+//     {
+//       icon: (
+//         <Image
+//           src="/assets/skills/figma.svg"
+//           width={80}
+//           height={80}
+//           alt="figma"
+//         />
+//       ),
+//       name: 'figma designer',
+//     },
 
-    {
-      icon: (
-        <Image
-          src="/assets/skills/node.svg"
-          width={80}
-          height={80}
-          alt="node"
-        />
-      ),
-      name: 'node.js',
-    },
-    {
-      icon: (
-        <Image
-          src="/assets/skills/next.svg"
-          width={80}
-          height={80}
-          alt="next"
-        />
-      ),
-      name: 'next.js',
-    },
-    {
-      icon: (
-        <Image
-          src="/assets/skills/tailwind.svg"
-          width={80}
-          height={80}
-          alt="tailwind"
-        />
-      ),
-      name: 'tailwind.css',
-    },
-    {
-      icon: (
-        <Image
-          src="/assets/skills/typescript.svg"
-          width={80}
-          height={80}
-          alt="typescript"
-        />
-      ),
-      name: 'typescript',
-    },
-    {
-      icon: (
-        <Image src="/assets/skills/aws.svg" width={80} height={80} alt="aws" />
-      ),
-      name: 'Amazon Web Services',
-    },
-    {
-      icon: (
-        <Image
-          src="/assets/skills/vercel.svg"
-          width={80}
-          height={80}
-          alt="vercel"
-        />
-      ),
-      name: 'vercel',
-    },
-  ],
-};
+//     {
+//       icon: (
+//         <Image
+//           src="/assets/skills/node.svg"
+//           width={80}
+//           height={80}
+//           alt="node"
+//         />
+//       ),
+//       name: 'node.js',
+//     },
+//     {
+//       icon: (
+//         <Image
+//           src="/assets/skills/next.svg"
+//           width={80}
+//           height={80}
+//           alt="next"
+//         />
+//       ),
+//       name: 'next.js',
+//     },
+//     {
+//       icon: (
+//         <Image
+//           src="/assets/skills/tailwind.svg"
+//           width={80}
+//           height={80}
+//           alt="tailwind"
+//         />
+//       ),
+//       name: 'tailwind.css',
+//     },
+//     {
+//       icon: (
+//         <Image
+//           src="/assets/skills/typescript.svg"
+//           width={80}
+//           height={80}
+//           alt="typescript"
+//         />
+//       ),
+//       name: 'typescript',
+//     },
+//     {
+//       icon: (
+//         <Image src="/assets/skills/aws.svg" width={80} height={80} alt="aws" />
+//       ),
+//       name: 'Amazon Web Services',
+//     },
+//     {
+//       icon: (
+//         <Image
+//           src="/assets/skills/vercel.svg"
+//           width={80}
+//           height={80}
+//           alt="vercel"
+//         />
+//       ),
+//       name: 'vercel',
+//     },
+//   ],
+// };
 
 // About data
 const about = {
@@ -222,7 +222,7 @@ const Resume = () => {
       <div className="container mx-auto mt-20">
         <Tabs
           defaultChecked="experience"
-          className="flex flex-col xl:flex-row gap-[60px] "
+          className="flex flex-col xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[350px] mx-auto pt-5 xl:mx-0 gap-6">
             <TabsTrigger value="experience">Experience</TabsTrigger>
@@ -248,7 +248,8 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] min-h-[184px] max-w-[400px] px-10 rounded-xl flex flex-col items-center justify-center lg:items-start gap-3"
+                          className="bg-[#232329] min-h-[184px] max-w-[400px] px-10 rounded-xl 
+                          flex flex-col items-center justify-center lg:items-start gap-5"
                         >
                           <div className="flex flex-row gap-2 items-start justify-between w-full">
                             <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
@@ -276,22 +277,20 @@ const Resume = () => {
             </TabsContent>
 
             {/* education */}
-            <TabsContent value="education" className="w-full">
-              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+            <TabsContent value="education" className="w-full pt-3 mt-5">
+              <div className="flex flex-col gap-[30px] text-center">
                 <h3 className="text-4xl font-bold">{education.title}</h3>
 
-                <p className="max-w-[200px] text-white/60 mx-auto xl:mx-0 ">
-                  {education.description}
-                </p>
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] ">
+                  <ul className="flex items-center justify-center gap-[30px] mt-10">
                     {education.items.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] min-h-[184px] max-w-[400px] py-6 px-10 rounded-xl flex flex-col items-center justify-center lg:items-start gap-1"
+                          className="bg-[#232329] min-h-[184px] max-w-[400px] px-10 rounded-xl 
+                          flex flex-col items-center justify-center lg:items-start gap-5"
                         >
-                          <div className="flex flex-row gap-2  items-start justify-between w-full">
+                          <div className="flex flex-row gap-2 items-start justify-between w-full">
                             <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
                               {item.institution}
                             </h3>
@@ -305,7 +304,7 @@ const Resume = () => {
                             />
                           </div>
 
-                          <div className="flex items-center gap-3 ">
+                          <div className="flex items-center gap-3">
                             {/* dot */}
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                             <p className="text-white/60">{item.degree}</p>
