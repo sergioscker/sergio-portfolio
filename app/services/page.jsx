@@ -26,12 +26,12 @@ const Services = () => {
         >
           <div
             className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px]
-           border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] 
+           border border-white/10 rounded-lg shadow-md w-full h-[320px] 
            flex flex-col items-center justify-center text-center p-4"
           >
             <div
               className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] 
-            backdrop-blur-[4px] border border-white border-opacity-10 rounded-lg 
+            backdrop-blur-[4px] border border-white/10 rounded-lg 
             shadow-md w-full h-[320px] flex flex-col items-center justify-center text-center p-4"
             >
               <Image
@@ -67,12 +67,12 @@ const Services = () => {
         >
           <div
             className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] 
-          border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] flex flex-col 
+          border border-white/10 rounded-lg shadow-md w-full h-[320px] flex flex-col 
           items-center justify-center text-center p-4"
           >
             <div
               className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px] 
-            border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] flex flex-col 
+            border border-white/10 rounded-lg shadow-md w-full h-[320px] flex flex-col 
             items-center justify-center text-center p-4"
             >
               <Image
@@ -108,12 +108,12 @@ const Services = () => {
         >
           <div
             className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px]
-           border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] flex flex-col
+           border border-white/10 rounded-lg shadow-md w-full h-[320px] flex flex-col
             items-center justify-center text-center p-4"
           >
             <div
               className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px] 
-            border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] flex flex-col
+            border border-white/10 rounded-lg shadow-md w-full h-[320px] flex flex-col
              items-center justify-center text-center p-4"
             >
               <Image
@@ -149,12 +149,12 @@ const Services = () => {
         >
           <div
             className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px]
-           border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] flex flex-col 
+           border border-white/10 rounded-lg shadow-md w-full h-[320px] flex flex-col 
            items-center justify-center text-center p-4"
           >
             <div
               className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px]
-             border border-white border-opacity-10 rounded-lg shadow-md w-full h-[320px] flex flex-col
+             border border-white/10 rounded-lg shadow-md w-full h-[320px] flex flex-col
               items-center justify-center text-center p-4"
             >
               <Image

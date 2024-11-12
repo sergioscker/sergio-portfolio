@@ -105,7 +105,9 @@ const Contact = () => {
         message: '',
       });
 
-      router.push('/');
+      setTimeout(() => {
+        router.push('/');
+      }, 5000);
     } catch (error) {
       toast.error('Failed to send message. Please try again.', {
         position: 'top-right',
@@ -140,6 +142,7 @@ const Contact = () => {
                 <Input
                   type="text"
                   name="firstName"
+                  className="text-white"
                   placeholder="First name"
                   value={formData.firstName}
                   onChange={handleChange}
@@ -147,6 +150,7 @@ const Contact = () => {
                 <Input
                   type="text"
                   name="lastName"
+                  className="text-white"
                   placeholder="Last name"
                   value={formData.lastName}
                   onChange={handleChange}
@@ -154,6 +158,7 @@ const Contact = () => {
                 <Input
                   type="email"
                   name="email"
+                  className="text-white"
                   placeholder="Email address"
                   value={formData.email}
                   onChange={handleChange}
@@ -161,6 +166,7 @@ const Contact = () => {
                 <Input
                   type="number"
                   name="phoneNumber"
+                  className="text-white"
                   placeholder="Phone number"
                   value={formData.phoneNumber}
                   onChange={handleChange}
@@ -169,7 +175,7 @@ const Contact = () => {
 
               <Textarea
                 name="message"
-                className="h-[200px]"
+                className="h-[200px] text-white"
                 placeholder="Type your message here."
                 value={formData.message}
                 onChange={handleChange}
@@ -205,7 +211,7 @@ const Contact = () => {
                   </div>
 
                   <div className="flex-1">
-                    <p className="text-white/60">{item.title}</p>
+                    <p className="dark:text-white/60">{item.title}</p>
                     <h3 className="text-xl">{item.description}</h3>
                   </div>
                 </li>

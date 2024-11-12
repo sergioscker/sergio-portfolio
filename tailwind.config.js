@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ['class'],
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -23,8 +23,12 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#0a0a0a', //#1c1c22
+        primary: '#0a0a0a',
         accent: {
+          DEFAULT: '#0086b0',
+          hover: '#01579b',
+        },
+        light: {
           DEFAULT: '#0086b0',
           hover: '#01579b',
         },

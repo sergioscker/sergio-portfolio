@@ -15,7 +15,6 @@ const slugs = [
   'amazonaws',
   'postgresql',
   'mongodb',
-  'reactnative',
   'expo',
   'vercel',
   'android',

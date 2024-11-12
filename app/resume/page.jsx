@@ -37,7 +37,7 @@ const education = {
 
   items: [
     {
-      institution: 'Dev Club Developer Training',
+      institution: 'Dev Club Developer',
       degree: 'FullStack Developer',
     },
   ],
@@ -238,7 +238,7 @@ const Resume = () => {
               <div className="flex flex-col gap-[30px] text-center">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
 
-                <p className="max-w-[700px] text-white/60 mx-auto">
+                <p className="max-w-[700px] dark:text-white/60 mx-auto">
                   {experience.description}
                 </p>
 
@@ -252,7 +252,7 @@ const Resume = () => {
                           flex flex-col items-center justify-center lg:items-start gap-5"
                         >
                           <div className="flex flex-row gap-2 items-start justify-between w-full">
-                            <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                            <h3 className="text-xl text-white max-w-[260px] min-h-[60px] text-center lg:text-left">
                               {item.position}
                             </h3>
 
@@ -291,7 +291,7 @@ const Resume = () => {
                           flex flex-col items-center justify-center lg:items-start gap-5"
                         >
                           <div className="flex flex-row gap-2 items-start justify-between w-full">
-                            <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                            <h3 className="text-xl text-white max-w-[260px] min-h-[60px] text-center lg:text-left">
                               {item.institution}
                             </h3>
 
@@ -329,7 +329,7 @@ const Resume = () => {
               <div className="flex flex-col gap-[40px] text-center">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
 
-                <p className="max-w-[800px] text-white/60 mx-auto xl:max-0">
+                <p className="max-w-[800px] dark:text-white/60 mx-auto xl:max-0">
                   {about.description}
                 </p>
 
@@ -340,7 +340,7 @@ const Resume = () => {
                         key={index}
                         className="flex items-center justify-center px-2 xl:justify-start gap-5"
                       >
-                        <p className="text-white/60">{item.fieldName}</p>
+                        <p className="dark:text-white/60">{item.fieldName}</p>
                         <p className="text-md xl:text-lg">{item.fieldValue}</p>
                       </li>
                     );

@@ -5,6 +5,9 @@ import './globals.css';
 import PageTransition from '@/components/PageTransition';
 import StairTransition from '@/components/StairTransition';
 import { Header } from '@/components/Header';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
+import ThemeProviderWrapper from '@/components/ThemeProvider';
+import ClientOnly from '@/components/ClientOnly';
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -38,9 +41,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${jetBrainsMono.variable}  antialiased`}>
-        <Header />
-        <StairTransition />
-        <PageTransition>{children}</PageTransition>
+        <ClientOnly>
+          <ThemeProviderWrapper>
+            <Header />
+            <ThemeSwitcher />
+            <StairTransition />
+            <PageTransition>{children}</PageTransition>
+          </ThemeProviderWrapper>
+        </ClientOnly>
       </body>
     </html>
   );

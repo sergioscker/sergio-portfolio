@@ -2,20 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Definições para o modo Dark */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background-color: #0a0a0a;
+    --text-color: #ededed;
   }
 }
 
+[data-theme='dark'] {
+  --background-color: #ededed;
+  --text-color: #0a0a0a;
+}
+
+/* Estilos base */
 @layer base {
   body {
-    @apply font-primary bg-primary text-white leading-loose;
+    @apply font-primary bg-primary leading-loose;
     @apply text-center xl:text-left;
     font-family: var(--font-jetbrainsMono);
+    background-color: var(--background-color);
+    color: var(--text-color);
   }
 
+  /* Títulos */
   .h1 {
     @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
   }
@@ -28,11 +38,22 @@
     @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
   }
 
+  /* Textos com contorno */
   .text-outline {
     -webkit-text-stroke: 1px #ffffff;
   }
 
   .text-outline-hover {
     -webkit-text-stroke: 1px #4a8fff;
+  }
+
+  /* Links */
+  a {
+    color: var(--foreground);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--foreground);
   }
 }

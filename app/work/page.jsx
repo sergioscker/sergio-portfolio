@@ -253,20 +253,20 @@ const Work = () => {
           >
             <div className="flex flex-col gap-[30px] h-[50%]">
               {/* outline id */}
-              <div className="text-8xl leanding-none font-extrabold text-transparent text-outline">
+              <div className="text-8xl leanding-none font-extrabold dark:text-transparent text-outline">
                 {project.id}
               </div>
 
               {/* projects category */}
               <h2
-                className="text-[42px] font-bold leading-none text-white
+                className="text-[42px] font-bold leading-none dark:text-white
                group-hover:text-accent-hover transition-all duration-500 capitalize"
               >
                 {project.category} project
               </h2>
 
               {/* projects description */}
-              <p className="text-white/60">{project.description}</p>
+              <p className="dark:text-white/60">{project.description}</p>
 
               {/* stacks */}
               <ul className="flex justify-center items-center gap-3 flex-wrap">
@@ -275,8 +275,8 @@ const Work = () => {
                     <li key={index} className="text-xl text-accent">
                       <TooltipProvider delayDuration={100}>
                         <Tooltip>
-                          <TooltipTrigger className="w-[70px] h-[70px] p-8 rounded-md bg-white/5 flex justify-center items-center group">
-                            <span className="text-white text-3xl group-hover:text-accent-hover">
+                          <TooltipTrigger className="w-[80px] h-[80px] p-8 rounded-md bg-white/5 flex justify-center items-center group">
+                            <span className="dark:text-white text-4xl group-hover:text-accent-hover">
                               {item.icon}
                             </span>
                           </TooltipTrigger>
@@ -291,7 +291,7 @@ const Work = () => {
               </ul>
 
               {/* border */}
-              <div className="border border-white/20"></div>
+              <div className="border dark:border-white/20"></div>
 
               {/* buttons */}
               <div className="flex items-center gap-4">
@@ -303,8 +303,8 @@ const Work = () => {
                 >
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group ">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent-hover" />
+                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full dark:bg-white/5 bg-accent flex justify-center items-center group">
+                        <BsArrowUpRight className="dark:text-white text-3xl group-hover:text-accent-hover" />
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>Live project</p>
@@ -321,8 +321,8 @@ const Work = () => {
                 >
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group ">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent-hover" />
+                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full dark:bg-white/5 bg-accent flex justify-center items-center group">
+                        <BsGithub className="dark:text-white text-3xl group-hover:text-accent-hover" />
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>GitHub repository</p>

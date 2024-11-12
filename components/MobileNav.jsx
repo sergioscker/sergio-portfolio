@@ -35,7 +35,7 @@ const MobileNav = () => {
         className="flex justify-center items-center"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <CiMenuBurger className="text-[32px] text-accent" />
+        <CiMenuBurger className="text-[32px] dark:text-accent" />
       </SheetTrigger>
 
       <SheetContent>
@@ -47,7 +47,7 @@ const MobileNav = () => {
         {/* logo */}
         <div className="mt-28 pb-14 mb-20 text-center text-2xl">
           <Link href="/">
-            <h1 className="text-4xl font-semibold">
+            <h1 className="text-4xl font-semibold text-white">
               Sergio<span className="text-accent">.</span>
             </h1>
           </Link>
@@ -60,11 +60,11 @@ const MobileNav = () => {
               <Link
                 href={link.path}
                 key={index}
-                onClick={() => setIsOpen(false)} // Fecha o menu ao clicar no link
+                onClick={() => setIsOpen(false)}
                 className={`${
                   link.path === pathname &&
                   'text-accent border-b-2 border-accent'
-                } text-xl capitalize hover:text-accent-hover transition-all`}
+                } text-xl text-white capitalize hover:text-accent-hover transition-all`}
               >
                 {link.name}
               </Link>
