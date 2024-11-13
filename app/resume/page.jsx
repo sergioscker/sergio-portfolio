@@ -37,7 +37,7 @@ const education = {
 
   items: [
     {
-      institution: 'Dev Club Developer',
+      institution: 'Dev Club',
       degree: 'FullStack Developer',
     },
   ],
@@ -178,15 +178,19 @@ const education = {
 const about = {
   title: 'About me',
 
-  description: `Hello, I'm Sérgio Oliveira, a FullStack Developer at the beginning of my career, 
-  who traded the vibrant heat of Rio de Janeiro for the European winter in search of new opportunities. 
-  I firmly believe that technology has the power to transform lives and businesses, 
-  and I'm open to being part of this change.
-  My goal is to find an opportunity in the job market that allows me to apply what I've learned, 
-  while learning from experienced professionals and collaborating on the team's growth.
-  If you are looking for a motivated professional with a thirst for knowledge
-   and a true passion for technology, I would love the opportunity to talk about
-    how I can add value to your team.
+  description: `Hello, my name is Sérgio Oliveira, and I am a frontend developer currently living in Portugal.
+  I love doing different activities throughout the day and feeling like my time was well spent. I'm very proactive and enjoy keeping my tasks and studies organized. 
+  I moved to Portugal to study programming and found the opportunity to align my motivations and dreams in this field.
+
+  Over the past year, I have focused on learning JavaScript and gained experience with tools like React, Git, Figma, TypeScript, Node, and Styled-components. 
+  To take on more complex projects, I kept improving my knowledge in modern and dynamic frameworks such as NextJS, Tailwind, Vite, Prisma, and more.
+  I have a strong passion for learning and am very curious, as I believe knowledge is key to overcoming complex situations and solving challenges and problems. 
+  I try to be communicative and dedicated, ensuring transparency and keeping up with tasks alongside my team. This helps me build trust and credibility,
+  creating an environment where I can rely on my colleagues and provide support whenever needed.
+
+  After completing over 10 projects and making nearly 200 commits, deploying on platforms like Vercel and AWS, I have built a solid foundation to look for a job. 
+  I am eager to contribute and learn from experienced professionals, helping the team grow and develop large-scale digital solutions.
+  
   Let's turn ideas into reality and create impactful solutions together!`,
 
   info: [
@@ -219,7 +223,7 @@ const Resume = () => {
       }}
       className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
     >
-      <div className="container mx-auto mt-20">
+      <div className="container mx-auto mt-16">
         <Tabs
           defaultChecked="experience"
           className="flex flex-col xl:flex-row gap-[60px]"
@@ -290,8 +294,8 @@ const Resume = () => {
                           className="bg-[#232329] min-h-[184px] max-w-[400px] px-10 rounded-xl 
                           flex flex-col items-center justify-center lg:items-start gap-5"
                         >
-                          <div className="flex flex-row gap-2 items-start justify-between w-full">
-                            <h3 className="text-xl text-white max-w-[260px] min-h-[60px] text-center lg:text-left">
+                          <div className="flex flex-row items-start justify-between gap-5 w-full">
+                            <h3 className="text-xl text-white max-w-[260px] min-h-[60px]">
                               {item.institution}
                             </h3>
 
@@ -307,7 +311,9 @@ const Resume = () => {
                           <div className="flex items-center gap-3">
                             {/* dot */}
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.degree}</p>
+                            <p className="text-white/60 text-lg">
+                              {item.degree}
+                            </p>
                           </div>
                         </li>
                       );
@@ -329,11 +335,11 @@ const Resume = () => {
               <div className="flex flex-col gap-[40px] text-center">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
 
-                <p className="max-w-[800px] dark:text-white/60 mx-auto xl:max-0">
+                <p className="max-w-[100%] dark:text-white/60 mx-auto xl:text-center">
                   {about.description}
                 </p>
 
-                <ul className="grid grid-cols-1 xl:grid-cols-2 xl:text-center gap-y-6 max-w-[800px] mx-auto">
+                <ul className="grid grid-cols-1 xl:grid-cols-2 xl:text-center gap-y-6 mb-3 max-w-[100%] mx-auto">
                   {about.info.map((item, index) => {
                     return (
                       <li
