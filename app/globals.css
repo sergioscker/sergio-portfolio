@@ -2,58 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definições para o modo Dark */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #0a0a0a;
-    --text-color: #ededed;
-  }
-}
-
-[data-theme='dark'] {
-  --background-color: #ededed;
-  --text-color: #0a0a0a;
-}
-
-/* Estilos base */
 @layer base {
   body {
-    @apply font-primary leading-loose;
-    @apply text-center xl:text-left;
-    font-family: var(--font-jetbrainsMono);
-    background-color: var(--background-color);
-    color: var(--text-color);
+    @apply font-primary bg-white text-neutral-900 leading-loose;
+    @apply dark:bg-neutral-900 dark:text-white;
   }
 
-  /* Títulos */
   .h1 {
     @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+    @apply dark:text-white;
   }
 
-  .h2 {
-    @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
-  }
-
+  .h2,
   .h3 {
-    @apply text-[20px] xl:text-[32px] leading-[1.1] font-semibold;
+    @apply font-semibold;
+    @apply dark:text-gray-200;
   }
 
-  /* Textos com contorno */
-  .text-outline {
-    -webkit-text-stroke: 1px #ffffff;
-  }
-
-  .text-outline-hover {
-    -webkit-text-stroke: 1px #4a8fff;
-  }
-
-  /* Links */
+  /* Adaptações para links */
   a {
-    color: var(--foreground);
-    text-decoration: none;
+    @apply text-accent hover:text-accent-hover;
   }
 
   a:hover {
-    color: var(--foreground);
+    @apply dark:text-accent-hover;
   }
+}
+
+/* Estilos personalizados */
+.text-outline {
+  -webkit-text-stroke: 1px #ffffff;
+}
+
+.text-outline-hover {
+  -webkit-text-stroke: 1px #4a8fff;
 }
