@@ -18,7 +18,7 @@
 /* Estilos base */
 @layer base {
   body {
-    @apply font-primary bg-primary leading-loose;
+    @apply font-primary dark:bg-primary leading-loose;
     @apply text-center xl:text-left;
     font-family: var(--font-jetbrainsMono);
     background-color: var(--background-color);
