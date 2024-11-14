@@ -28,10 +28,6 @@ module.exports = {
           DEFAULT: '#0086b0',
           hover: '#01579b',
         },
-        light: {
-          DEFAULT: '#0086b0',
-          hover: '#01579b',
-        },
         borderRadius: {
           lg: 'var(--radius)',
           md: 'calc(var(--radius) - 2px)',

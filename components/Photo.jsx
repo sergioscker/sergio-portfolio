@@ -1,14 +1,26 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import { motion } from 'framer-motion';
+
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 
 const Photo = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
-    <div className="w-full h-full relative ">
+    <div className="w-full h-full relative">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
@@ -23,7 +35,7 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: 'easeInOut' },
           }}
-          className="xl:right-[20px] right-[10px] w-[260px] h-[260px] xl:w-[430px] xl:h-[430px] mix-blend-lighten absolute"
+          className="xl:right-[20px] right-[10px] w-[260px] h-[260px] xl:w-[430px] xl:h-[430px] absolute"
         >
           {theme === 'light' ? (
             <Image
@@ -33,6 +45,7 @@ const Photo = () => {
               quality={100}
               fill
               className="object-contain"
+              draggable="false"
             />
           ) : (
             <Image
@@ -42,7 +55,7 @@ const Photo = () => {
               quality={100}
               fill
               className="object-contain"
-              onChange={() => setTheme(theme)}
+              draggable="false"
             />
           )}
         </motion.div>

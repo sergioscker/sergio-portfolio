@@ -25,7 +25,7 @@ const Home = () => {
               <span className="text-accent">Sérgio Oliveira</span>
             </h1>
 
-            <p className="max-w-[500px] mb-9 dark:text-white/80">
+            <p className="max-w-[500px] mb-9 dark:text-white/70">
               I develop digital experiences with a focus on elegance and
               functionality, I have a portfolio of projects that reflect my
               skills in different languages and technologies.
