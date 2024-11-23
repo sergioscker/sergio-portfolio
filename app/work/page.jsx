@@ -1,5 +1,8 @@
 'use client';
 
+import Link from 'next/link';
+import Image from 'next/image';
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -10,7 +13,16 @@ import 'swiper/css';
 // icons
 import { BsArrowUpRight, BsGithub } from 'react-icons/bs';
 
-import { TbBrandTypescript, TbBrandPrisma } from 'react-icons/tb';
+import { SiStyledcomponents } from 'react-icons/si';
+
+import {
+  TbBrandTypescript,
+  TbBrandPrisma,
+  TbBrandTailwind,
+  TbBrandNextjs,
+  TbBrandVite,
+  TbBrandFigma,
+} from 'react-icons/tb';
 
 import {
   DiHtml5,
@@ -32,8 +44,6 @@ import {
 } from '@/components/ui/tooltip';
 
 //components
-import Link from 'next/link';
-import Image from 'next/image';
 import WorkSliderBtns from '@/components/WorkSliderBtns';
 
 const projects = [
@@ -43,7 +53,7 @@ const projects = [
 
     category: 'FrontEnd UI',
 
-    description: `I developed a Landing Page for Virtual Headsets using React.js, 
+    description: `I developed a Landing Page for Virtual Headsets using ReactJS, 
     with styling done through the styled-components library.`,
 
     image: '/assets/work/tech-solutions.png',
@@ -53,9 +63,12 @@ const projects = [
     github: 'https://github.com/sergioliveira-developer/tech-solutions',
 
     stack: [
+      { icon: <DiReact size={60} />, name: 'reactJS' },
+      { icon: <TbBrandVite size={60} />, name: 'vite' },
       { icon: <DiJavascript size={60} />, name: 'javascript' },
-      { icon: <DiReact size={60} />, name: 'react.js' },
       { icon: <DiHtml5 size={60} />, name: 'html5' },
+      { icon: <SiStyledcomponents size={60} />, name: 'styled-components' },
+      { icon: <TbBrandFigma size={60} />, name: 'figmadesigner' },
     ],
   },
 
@@ -74,12 +87,13 @@ const projects = [
 
     live: 'https://burguershop-eight.vercel.app',
 
-    github: 'https://github.com/sergioliveira-developer/DevBurger',
+    github: 'https://github.com/sergioscker/burguer-shop',
 
     stack: [
+      { icon: <DiReact size={60} />, name: 'reactJS' },
       { icon: <DiJavascript size={60} />, name: 'javascript' },
-      { icon: <DiReact size={60} />, name: 'react.js' },
-      { icon: <DiNodejs size={60} />, name: 'node.js' },
+      { icon: <SiStyledcomponents size={60} />, name: 'styled-components' },
+      { icon: <DiNodejs size={60} />, name: 'nodeJS' },
       { icon: <DiDocker size={60} />, name: 'docker' },
       { icon: <DiPostgresql size={60} />, name: 'postgres' },
       { icon: <DiMongodb size={60} />, name: 'mongoDB' },
@@ -89,6 +103,31 @@ const projects = [
 
   {
     id: '03',
+    title: 'ToDo - List',
+
+    category: 'React + NextJS',
+
+    description: `Todo List application built with NextJS, React, and TailwindCSS, 
+    leveraging modern libraries to ensure a rich and fluid user experience. 
+    The application is modular, accessible, and easy to customize.`,
+
+    image: '/assets/work/todolist.png',
+
+    live: 'https://todo-list-tasks-two.vercel.app',
+
+    github: 'https://github.com/sergioscker/todo-list',
+    stack: [
+      { icon: <DiReact size={60} />, name: 'reactJS' },
+      { icon: <DiHtml5 size={60} />, name: 'html5' },
+      { icon: <DiJavascript size={60} />, name: 'javascript' },
+      { icon: <TbBrandNextjs size={60} />, name: 'nextJS' },
+      { icon: <TbBrandTailwind size={60} />, name: 'tailwindCSS' },
+      { icon: <TbBrandFigma size={60} />, name: 'figmadesigner' },
+    ],
+  },
+
+  {
+    id: '04',
     title: 'Portfolio',
 
     category: 'FrontEnd UI',
@@ -104,19 +143,20 @@ const projects = [
     github: 'https://github.com/sergioscker/sergio-oliveira-portfolio',
     stack: [
       { icon: <DiJavascript size={60} />, name: 'javascript' },
-      { icon: <DiReact size={60} />, name: 'react.js' },
+      { icon: <DiReact size={60} />, name: 'reactJS' },
       { icon: <DiHtml5 size={60} />, name: 'html5' },
+      { icon: <SiStyledcomponents size={60} />, name: 'styled-components' },
     ],
   },
 
   {
-    id: '04',
+    id: '05',
     title: 'Finantial Control',
 
     category: 'FullStack TypeScript',
 
     description: `Financial Control is a full-stack application designed to manage and track personal finances. 
-    It includes a backend API built with Node.js and TypeScript and a responsive frontend interface using React and Vite.
+    It includes a backend API built with NodeJS and TypeScript and a responsive frontend interface using React and Vite.
      The project provides a seamless way to visualize, manage, and track financial data with dynamic charts and detailed forms.`,
 
     image: '/assets/work/dev-bills.png',
@@ -128,13 +168,14 @@ const projects = [
     stack: [
       { icon: <TbBrandTypescript size={60} />, name: 'typescript' },
       { icon: <DiJavascript size={60} />, name: 'javascript' },
+      { icon: <SiStyledcomponents size={60} />, name: 'styled-components' },
       { icon: <DiMongodb size={60} />, name: 'mongoDB' },
-      { icon: <DiNodejs size={60} />, name: 'node.js' },
+      { icon: <DiNodejs size={60} />, name: 'nodeJS' },
     ],
   },
 
   {
-    id: '05',
+    id: '06',
     title: 'Users Office',
 
     category: 'FullStack- API Prisma',
@@ -149,16 +190,17 @@ const projects = [
     github: 'https://github.com/sergioliveira-developer/Users-Office',
 
     stack: [
-      { icon: <DiReact size={60} />, name: 'react.js' },
+      { icon: <DiReact size={60} />, name: 'reactJS' },
       { icon: <DiJavascript size={60} />, name: 'javascript' },
-      { icon: <DiNodejs size={60} />, name: 'node.js' },
+      { icon: <SiStyledcomponents size={60} />, name: 'styled-components' },
+      { icon: <DiNodejs size={60} />, name: 'nodeJS' },
       { icon: <DiMongodb size={60} />, name: 'mongodb' },
       { icon: <TbBrandPrisma size={60} />, name: 'prisma' },
     ],
   },
 
   {
-    id: '06',
+    id: '07',
     title: 'Mario Builter',
 
     category: 'JS Vanilla',
@@ -180,7 +222,7 @@ const projects = [
   },
 
   {
-    id: '07',
+    id: '08',
     title: 'Convert Money',
 
     category: 'JS Vanilla',
@@ -202,7 +244,7 @@ const projects = [
   },
 
   {
-    id: '08',
+    id: '09',
     title: 'Game JO-KEN-PÔ',
 
     category: 'JS Vanilla',

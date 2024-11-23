@@ -35,12 +35,13 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: 'easeInOut' },
           }}
-          className="xl:right-[20px] right-[10px] w-[260px] h-[260px] xl:w-[430px] xl:h-[430px] absolute"
+          className="xl:right-[20px] xl:top-[-2px] right-[10px] w-[260px] h-[260px]
+           xl:w-[430px] xl:h-[430px] absolute"
         >
-          {theme === 'light' ? (
+          {theme === 'dark' ? (
             <Image
-              src="/assets/homeLight.png"
-              alt="lighthome"
+              src="/assets/darkHome.webp"
+              alt="darkHome"
               priority
               quality={100}
               fill
@@ -49,12 +50,12 @@ const Photo = () => {
             />
           ) : (
             <Image
-              src="/assets/homeDark.png"
-              alt="darkhome"
+              src="/assets/lightHome.webp"
+              alt="lightHome"
               priority
               quality={100}
               fill
-              className="object-contain"
+              className="object-contain h-auto w-auto"
               draggable="false"
             />
           )}

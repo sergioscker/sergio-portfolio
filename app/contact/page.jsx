@@ -60,6 +60,7 @@ const info = [
 
 const Contact = () => {
   const router = useRouter();
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -92,9 +93,10 @@ const Contact = () => {
 
     try {
       await emailjs.send(serviceID, templateID, templateParams, userID);
+      console.log('E-mail enviado com sucesso');
       toast.success('Message sent successfully!', {
         position: 'top-right',
-        autoClose: 2000,
+        autoClose: 3000,
       });
 
       setFormData({
@@ -107,11 +109,11 @@ const Contact = () => {
 
       setTimeout(() => {
         router.push('/');
-      }, 5000);
+      }, 4000);
     } catch (error) {
       toast.error('Failed to send message. Please try again.', {
         position: 'top-right',
-        autoClose: 2000,
+        autoClose: 3000,
       });
     } finally {
       setLoading(false);
@@ -211,8 +213,10 @@ const Contact = () => {
                   </div>
 
                   <div className="flex-1">
-                    <p className="dark:text-white/60">{item.title}</p>
-                    <h3 className="text-xl">{item.description}</h3>
+                    <p className="dark:text-white/60 text-center">
+                      {item.title}
+                    </p>
+                    <h3 className="text-xl text-center">{item.description}</h3>
                   </div>
                 </li>
               ))}
