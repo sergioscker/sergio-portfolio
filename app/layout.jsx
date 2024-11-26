@@ -18,7 +18,7 @@ const jetBrainsMono = JetBrains_Mono({
 export const metadata = {
   title: 'Portfolio',
   description:
-    'Check out the portfolio of [Sérgio Oliveira], specialist in [JavaScript, React, Node, TypeScript, NoSql, SQL].',
+    'Check out the portfolio of Sérgio Oliveira, professional in [JavaScript, React, Node, TypeScript, NoSql, SQL].',
   keywords: 'portfolio, web developer, designer, JavaScript, React.js, Next.js',
   openGraph: {
     title: `Sérgio Oliveira Porfolio`,
@@ -28,9 +28,9 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '',
-        width: 800,
-        height: 600,
+        url: '/assets/rocket.svg',
+        width: 22,
+        height: 36,
         alt: 'logo',
       },
     ],

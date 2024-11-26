@@ -7,7 +7,6 @@
     @apply font-primary bg-white text-neutral-900 leading-loose;
     @apply dark:bg-primary dark:text-white leading-loose;
     font-family: var(--font-jetbrainsMono);
-    
   }
 
   .h1 {
