@@ -2,11 +2,16 @@
 
 import { useState } from 'react';
 
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+
 // animations
 import { motion } from 'framer-motion';
+import { toast } from 'react-toastify';
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useForm } from 'react-hook-form';
 
 //components
 import { Button } from '@/components/ui/button';
@@ -15,10 +20,6 @@ import { Textarea } from '@/components/ui/textarea';
 
 //icons
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from 'react-icons/fa';
-
-// notifications
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 // api emailJS
 import emailjs from 'emailjs-com';
@@ -59,8 +60,6 @@ const info = [
 ];
 
 const Contact = () => {
-  const router = useRouter();
-
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -69,14 +68,33 @@ const Contact = () => {
     message: '',
   });
 
+  const router = useRouter();
+
   const [loading, setLoading] = useState(false);
 
   const handleChange = (data) => {
     setFormData({ ...formData, [data.target.name]: data.target.value });
   };
 
-  const handleSubmit = async (data) => {
-    data.preventDefault();
+  // validation form
+  const schema = yup.object({
+    firstName: yup.string('firstname is required field').required(),
+    lastName: yup.string('lastname is required field').required(),
+    email: yup.string().email('email is required field').required(),
+    phoneNumber: yup.string('phone number is required field').required(),
+    message: yup.string('message is required field').required(),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  // submit form
+  const onSubmitForm = async () => {
     setLoading(true);
 
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
@@ -91,33 +109,34 @@ const Contact = () => {
       message: formData.message,
     };
 
-    try {
-      await emailjs.send(serviceID, templateID, templateParams, userID);
-      console.log('E-mail enviado com sucesso');
-      toast.success('Message sent successfully!', {
-        position: 'top-right',
-        autoClose: 3000,
-      });
+    // Usando toast.promise corretamente
+    await toast.promise(
+      emailjs.send(serviceID, templateID, templateParams, userID),
 
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phoneNumber: '',
-        message: '',
-      });
+      {
+        pending: 'Sending your message...',
+        success: {
+          render() {
+            setTimeout(() => {
+              router.push('/');
+            }, 2000);
+            return 'Message sent successfully!';
+          },
+        },
+        error: 'Message failed! Please try again.',
+      },
+    );
 
-      setTimeout(() => {
-        router.push('/');
-      }, 4000);
-    } catch (error) {
-      toast.error('Failed to send message. Please try again.', {
-        position: 'top-right',
-        autoClose: 3000,
-      });
-    } finally {
-      setLoading(false);
-    }
+    // reset form
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phoneNumber: '',
+      message: '',
+    });
+
+    setLoading(false);
   };
 
   return (
@@ -129,60 +148,113 @@ const Contact = () => {
       }}
       className="py-6"
     >
-      <ToastContainer />
       <div className="container mx-auto">
         <div className="flex flex-col pt-16 mt-8 xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:w-[50%] order-2 xl:order-none">
             <form
               className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
-              onSubmit={handleSubmit}
+              onSubmit={handleSubmit(onSubmitForm)}
             >
               <h3 className="text-4xl text-accent">Let's work together</h3>
 
+              {/* input container */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input
-                  type="text"
-                  name="firstName"
-                  className="text-white"
-                  placeholder="First name"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                />
-                <Input
-                  type="text"
-                  name="lastName"
-                  className="text-white"
-                  placeholder="Last name"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                />
-                <Input
-                  type="email"
-                  name="email"
-                  className="text-white"
-                  placeholder="Email address"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-                <Input
-                  type="number"
-                  name="phoneNumber"
-                  className="text-white"
-                  placeholder="Phone number"
-                  value={formData.phoneNumber}
-                  onChange={handleChange}
-                />
+                <div className="flex flex-col justify-center p-2">
+                  {/* Name input */}
+                  <Input
+                    type="text"
+                    name="name"
+                    {...register('firstName')}
+                    className="text-white"
+                    placeholder="First name"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                  />
+
+                  {errors.firstName && (
+                    <p className="text-red-500 text-sm mt-1 ml-4">
+                      {errors.firstName.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* lastName input */}
+                <div className="flex flex-col justify-center p-2">
+                  <Input
+                    type="text"
+                    name="lastName"
+                    {...register('lastName')}
+                    className="text-white"
+                    placeholder="Last name"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                  />
+
+                  {errors.lastName && (
+                    <p className="text-red-500 text-sm mt-1 ml-4">
+                      {errors.lastName.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* email input */}
+                <div className="flex flex-col justify-center p-2">
+                  <Input
+                    type="email"
+                    name="email"
+                    {...register('email')}
+                    className="text-white"
+                    placeholder="Email address"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1 ml-4">
+                      {errors.email.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* phoneNumber input */}
+                <div className="flex flex-col justify-center p-2">
+                  <Input
+                    type="number"
+                    name="phoneNumber"
+                    {...register('phoneNumber')}
+                    className="text-white"
+                    placeholder="Phone number"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                  />
+
+                  {errors.phoneNumber && (
+                    <p className="text-red-500 text-sm mt-1 ml-4">
+                      {errors.phoneNumber.message}
+                    </p>
+                  )}
+                </div>
               </div>
 
-              <Textarea
-                name="message"
-                className="h-[200px] text-white"
-                placeholder="Type your message here."
-                value={formData.message}
-                onChange={handleChange}
-              />
+              {/* text message */}
+              <div className="flex flex-col justify-center p-2">
+                <Textarea
+                  name="message"
+                  {...register('message')}
+                  className="h-[200px] text-white"
+                  placeholder="Type your message here."
+                  value={formData.message}
+                  onChange={handleChange}
+                />
+                {errors.message && (
+                  <p className="text-red-500 text-sm mt-1 ml-4">
+                    {errors.message.message}
+                  </p>
+                )}
+              </div>
 
+              {/* submit button */}
               <Button
                 type="submit"
                 size="md"
@@ -194,7 +266,7 @@ const Contact = () => {
             </form>
           </div>
 
-          {/* info */}
+          {/* information */}
           <div
             className="flex-1 flex items-center justify-center xl:justify-end order-1 xl:order-none 
           mb-8 xl:mb-0 pt-5 overflow-x-hidden"
@@ -216,6 +288,7 @@ const Contact = () => {
                     <p className="dark:text-white/60 text-center">
                       {item.title}
                     </p>
+
                     <h3 className="text-xl text-center">{item.description}</h3>
                   </div>
                 </li>

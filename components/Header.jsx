@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 //components
 import Nav from './Nav';
 import MobileNav from './MobileNav';
+import Image from 'next/image';
 
 export const Header = () => {
   return (
@@ -11,9 +12,16 @@ export const Header = () => {
       <div className="container mx-auto flex justify-between items-center ">
         {/* logo */}
         <Link href="/">
-          <h1 className="text-4xl font-semibold">
-            Sergio <span className="text-accent">.</span>
-          </h1>
+          <Image
+            src="/assets/favicon.svg"
+            alt="icon"
+            priority
+            quality={100}
+            width={80}
+            height={80}
+            className="object-contain"
+            draggable="false"
+          />
         </Link>
 
         {/* desktop nav & hire me button */}

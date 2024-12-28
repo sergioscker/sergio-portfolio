@@ -16,6 +16,7 @@ import { usePathname } from 'next/navigation';
 import { CiMenuBurger } from 'react-icons/ci';
 
 import { VisuallyHidden } from '@reach/visually-hidden';
+import Image from 'next/image';
 
 const links = [
   { name: 'home', path: '/' },
@@ -48,7 +49,7 @@ const MobileNav = () => {
         <div className="mt-28 pb-14 mb-20 text-center text-2xl">
           <Link href="/">
             <h1 className="text-4xl font-semibold text-white">
-              Sergio<span className="text-accent">.</span>
+              <Image src="/favicon.svg" alt="logo" />
             </h1>
           </Link>
         </div>

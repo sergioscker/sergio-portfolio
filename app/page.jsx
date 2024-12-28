@@ -9,7 +9,7 @@ import Socials from '@/components/Social';
 import Photo from '@/components/Photo';
 import Link from 'next/link';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <section className="h-full pt-20 mt-10">
       <div className="container mx-auto h-full">
@@ -69,4 +69,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

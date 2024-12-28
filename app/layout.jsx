@@ -9,6 +9,10 @@ import ThemeSwitcher from '@/components/ThemeSwitcher';
 import ThemeProviderWrapper from '@/components/ThemeProvider';
 import ClientOnly from '@/components/ClientOnly';
 
+// notifications
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const jetBrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-jetbrainsMono',
@@ -28,9 +32,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/assets/rocket.svg',
-        width: 22,
-        height: 36,
+        url: '',
         alt: 'logo',
       },
     ],
@@ -40,12 +42,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+      </head>
       <body className={`${jetBrainsMono.variable}  antialiased`}>
         <ClientOnly>
           <ThemeProviderWrapper>
             <Header />
             <ThemeSwitcher />
             <StairTransition />
+            <ToastContainer
+              autoClose={2000}
+              theme="colored"
+              position="top-right"
+              draggable
+            />
             <PageTransition>{children}</PageTransition>
           </ThemeProviderWrapper>
         </ClientOnly>

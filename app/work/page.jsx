@@ -13,7 +13,7 @@ import 'swiper/css';
 // icons
 import { BsArrowUpRight, BsGithub } from 'react-icons/bs';
 
-import { SiStyledcomponents } from 'react-icons/si';
+import { SiStyledcomponents, SiSequelize } from 'react-icons/si';
 
 import {
   TbBrandTypescript,
@@ -34,6 +34,7 @@ import {
   DiDocker,
   DiMongodb,
   DiPostgresql,
+  DiGit,
 } from 'react-icons/di';
 
 import {
@@ -69,11 +70,37 @@ const projects = [
       { icon: <DiHtml5 size={60} />, name: 'html5' },
       { icon: <SiStyledcomponents size={60} />, name: 'styled-components' },
       { icon: <TbBrandFigma size={60} />, name: 'figmadesigner' },
+      { icon: <DiGit size={60} />, name: 'git' },
+    ],
+  },
+  {
+    id: '02',
+    title: 'Tickets Management',
+
+    category: 'FullStack',
+
+    description: `A platform for creating, viewing and managing tickets by an administrator user that also allows filtering tickets by text search and status. User registration with name, password and department.`,
+
+    image: '/assets/work/ticket-management.png',
+
+    live: 'https://ticket-managment.vercel.app',
+
+    github: 'https://github.com/sergioscker/ticket-management',
+
+    stack: [
+      { icon: <DiReact size={60} />, name: 'reactJS' },
+      { icon: <DiJavascript size={60} />, name: 'javascript' },
+      { icon: <TbBrandTailwind size={60} />, name: 'tailwindcss' },
+      { icon: <DiNodejs size={60} />, name: 'nodeJS' },
+      { icon: <DiDocker size={60} />, name: 'docker' },
+      { icon: <DiPostgresql size={60} />, name: 'postgres' },
+      { icon: <SiSequelize size={60} />, name: 'ORM sequelize' },
+      { icon: <DiGit size={60} />, name: 'git' },
     ],
   },
 
   {
-    id: '02',
+    id: '03',
     title: 'Burger Shop',
 
     category: 'FullStack',
@@ -102,7 +129,7 @@ const projects = [
   },
 
   {
-    id: '03',
+    id: '04',
     title: 'ToDo - List',
 
     category: 'React + NextJS',
@@ -123,11 +150,12 @@ const projects = [
       { icon: <TbBrandNextjs size={60} />, name: 'nextJS' },
       { icon: <TbBrandTailwind size={60} />, name: 'tailwindCSS' },
       { icon: <TbBrandFigma size={60} />, name: 'figmadesigner' },
+      { icon: <DiGit size={60} />, name: 'git' },
     ],
   },
 
   {
-    id: '04',
+    id: '05',
     title: 'Portfolio',
 
     category: 'FrontEnd UI',
@@ -146,11 +174,12 @@ const projects = [
       { icon: <DiReact size={60} />, name: 'reactJS' },
       { icon: <DiHtml5 size={60} />, name: 'html5' },
       { icon: <SiStyledcomponents size={60} />, name: 'styled-components' },
+      { icon: <DiGit size={60} />, name: 'git' },
     ],
   },
 
   {
-    id: '05',
+    id: '06',
     title: 'Finantial Control',
 
     category: 'FullStack TypeScript',
@@ -171,11 +200,12 @@ const projects = [
       { icon: <SiStyledcomponents size={60} />, name: 'styled-components' },
       { icon: <DiMongodb size={60} />, name: 'mongoDB' },
       { icon: <DiNodejs size={60} />, name: 'nodeJS' },
+      { icon: <DiGit size={60} />, name: 'git' },
     ],
   },
 
   {
-    id: '06',
+    id: '07',
     title: 'Users Office',
 
     category: 'FullStack- API Prisma',
@@ -196,11 +226,12 @@ const projects = [
       { icon: <DiNodejs size={60} />, name: 'nodeJS' },
       { icon: <DiMongodb size={60} />, name: 'mongodb' },
       { icon: <TbBrandPrisma size={60} />, name: 'prisma' },
+      { icon: <DiGit size={60} />, name: 'git' },
     ],
   },
 
   {
-    id: '07',
+    id: '08',
     title: 'Mario Builter',
 
     category: 'JS Vanilla',
@@ -218,11 +249,12 @@ const projects = [
       { icon: <DiHtml5 size={60} />, name: 'html5' },
       { icon: <DiCss3 size={60} />, name: 'css3' },
       { icon: <DiJavascript size={60} />, name: 'javascript' },
+      { icon: <DiGit size={60} />, name: 'git' },
     ],
   },
 
   {
-    id: '08',
+    id: '09',
     title: 'Convert Money',
 
     category: 'JS Vanilla',
@@ -240,11 +272,12 @@ const projects = [
       { icon: <DiHtml5 size={60} />, name: 'html5' },
       { icon: <DiCss3 size={60} />, name: 'css3' },
       { icon: <DiJavascript size={60} />, name: 'javascript' },
+      { icon: <DiGit size={60} />, name: 'git' },
     ],
   },
 
   {
-    id: '09',
+    id: '10',
     title: 'Game JO-KEN-PÔ',
 
     category: 'JS Vanilla',
@@ -262,6 +295,7 @@ const projects = [
       { icon: <DiHtml5 size={60} />, name: 'html5' },
       { icon: <DiCss3 size={60} />, name: 'css3' },
       { icon: <DiJavascript size={60} />, name: 'javascript' },
+      { icon: <DiGit size={60} />, name: 'git' },
     ],
   },
 ];
@@ -394,13 +428,14 @@ const Work = () => {
                       {/* overlay */}
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
 
-                      {/* image */}
+                      {/* project image */}
                       <div className="relative w-full h-full">
                         <Image
                           src={project.image}
                           fill
-                          className="object-fill "
+                          className="object-fill"
                           quality={100}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 50vw"
                           alt="project-image"
                         />
                       </div>
