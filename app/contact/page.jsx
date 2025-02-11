@@ -109,7 +109,6 @@ const Contact = () => {
       message: formData.message,
     };
 
-    // Usando toast.promise corretamente
     await toast.promise(
       emailjs.send(serviceID, templateID, templateParams, userID),
 
