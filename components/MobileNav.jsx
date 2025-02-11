@@ -46,11 +46,18 @@ const MobileNav = () => {
         </SheetTitle>
 
         {/* logo */}
-        <div className="mt-28 pb-14 mb-20 text-center text-2xl">
+        <div className="flex items-center justify-center mt-28 pb-5">
           <Link href="/">
-            <h1 className="text-4xl font-semibold text-white">
-              <Image src="/favicon.svg" alt="logo" />
-            </h1>
+            <Image
+              src="/assets/favicon.svg"
+              alt="icon"
+              priority
+              quality={100}
+              width={80}
+              height={80}
+              className="object-contain"
+              draggable="false"
+            />
           </Link>
         </div>
 

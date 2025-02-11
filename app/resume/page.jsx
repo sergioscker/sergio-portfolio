@@ -8,7 +8,12 @@ import Image from 'next/image';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { IconCloudDemo } from '@/components/Icon-cloud';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 // experience data
 const experience = {
@@ -44,135 +49,137 @@ const education = {
 };
 
 // skills data
-// const skills = {
-//   title: 'My skills',
-//   skillsList: [
-//     {
-//       icon: (
-//         <Image
-//           src="/assets/skills/html.svg"
-//           width={80}
-//           height={80}
-//           alt="html"
-//         />
-//       ),
-//       name: 'html 5',
-//     },
-//     ,
-//     {
-//       icon: (
-//         <Image src="/assets/skills/git.svg" width={80} height={80} alt="git" />
-//       ),
-//       name: 'git',
-//     },
-//     {
-//       icon: (
-//         <Image
-//           src="/assets/skills/javascript.svg"
-//           width={80}
-//           height={80}
-//           alt="javascript"
-//         />
-//       ),
-//       name: 'javascript',
-//     },
-//     {
-//       icon: (
-//         <Image
-//           src="/assets/skills/react.svg"
-//           width={80}
-//           height={80}
-//           alt="react"
-//         />
-//       ),
-//       name: 'react.js',
-//     },
-//     {
-//       icon: (
-//         <Image
-//           src="/assets/skills/styled.svg"
-//           width={80}
-//           height={80}
-//           alt="styled-components"
-//         />
-//       ),
-//       name: 'styled-components',
-//     },
-//     {
-//       icon: (
-//         <Image
-//           src="/assets/skills/figma.svg"
-//           width={80}
-//           height={80}
-//           alt="figma"
-//         />
-//       ),
-//       name: 'figma designer',
-//     },
+const skills = {
+  title: 'My skills',
+  skillsList: [
+    {
+      icon: (
+        <Image
+          src="/assets/skills/html.svg"
+          width={80}
+          height={80}
+          alt="html"
+        />
+      ),
+      name: 'html 5',
+    },
+    ,
+    {
+      icon: (
+        <Image src="/assets/skills/git.svg" width={80} height={80} alt="git" />
+      ),
+      name: 'git',
+    },
+    {
+      icon: (
+        <Image
+          src="/assets/skills/javascript.svg"
+          width={80}
+          height={80}
+          alt="javascript"
+        />
+      ),
+      name: 'javascript',
+    },
+    {
+      icon: (
+        <Image
+          src="/assets/skills/react.svg"
+          width={80}
+          height={80}
+          alt="react"
+        />
+      ),
+      name: 'react.js',
+    },
+    {
+      icon: (
+        <Image
+          src="/assets/skills/styled.svg"
+          width={80}
+          height={80}
+          alt="styled-components"
+        />
+      ),
+      name: 'styled-components',
+    },
+    {
+      icon: (
+        <Image
+          src="/assets/skills/figma.svg"
+          width={80}
+          height={80}
+          alt="figma"
+        />
+      ),
+      name: 'figma designer',
+    },
 
-//     {
-//       icon: (
-//         <Image
-//           src="/assets/skills/node.svg"
-//           width={80}
-//           height={80}
-//           alt="node"
-//         />
-//       ),
-//       name: 'node.js',
-//     },
-//     {
-//       icon: (
-//         <Image
-//           src="/assets/skills/next.svg"
-//           width={80}
-//           height={80}
-//           alt="next"
-//         />
-//       ),
-//       name: 'next.js',
-//     },
-//     {
-//       icon: (
-//         <Image
-//           src="/assets/skills/tailwind.svg"
-//           width={80}
-//           height={80}
-//           alt="tailwind"
-//         />
-//       ),
-//       name: 'tailwind.css',
-//     },
-//     {
-//       icon: (
-//         <Image
-//           src="/assets/skills/typescript.svg"
-//           width={80}
-//           height={80}
-//           alt="typescript"
-//         />
-//       ),
-//       name: 'typescript',
-//     },
-//     {
-//       icon: (
-//         <Image src="/assets/skills/aws.svg" width={80} height={80} alt="aws" />
-//       ),
-//       name: 'Amazon Web Services',
-//     },
-//     {
-//       icon: (
-//         <Image
-//           src="/assets/skills/vercel.svg"
-//           width={80}
-//           height={80}
-//           alt="vercel"
-//         />
-//       ),
-//       name: 'vercel',
-//     },
-//   ],
-// };
+    {
+      icon: (
+        <Image
+          src="/assets/skills/node.svg"
+          width={80}
+          height={80}
+          alt="node"
+        />
+      ),
+      name: 'node.js',
+    },
+    {
+      icon: (
+        <Image
+          src="/assets/skills/next.svg"
+          width={80}
+          height={80}
+          alt="next"
+        />
+      ),
+      name: 'next.js',
+    },
+    {
+      icon: (
+        <Image
+          src="/assets/skills/tailwind.svg"
+          width={80}
+          height={80}
+          alt="tailwind"
+        />
+      ),
+      name: 'tailwind.css',
+    },
+    {
+      icon: (
+        <Image
+          src="/assets/skills/typescript.svg"
+          width={80}
+          height={80}
+          alt="typescript"
+        />
+      ),
+      name: 'typescript',
+    },
+    {
+      icon: (
+        <Image src="/assets/skills/aws.svg" width={80} height={80} alt="aws" />
+      ),
+      name: 'Amazon Web Services',
+    },
+    {
+      icon: (
+        <Image
+          src="/assets/skills/vercel.svg"
+          width={80}
+          height={80}
+          alt="vercel"
+        />
+      ),
+      name: 'vercel',
+    },
+  ],
+};
+
+console.log(skills);
 
 // About data
 const about = {
@@ -325,9 +332,29 @@ const Resume = () => {
 
             {/* skills */}
             <TabsContent value="skills" className="h-full w-full">
-              <div className="flex justify-center">
-                <IconCloudDemo />
-              </div>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]">
+                {skills.skillsList.map((skill, index) => {
+                  return (
+                    <li key={index}>
+                      <TooltipProvider delayDuration={100}>
+                        <Tooltip>
+                          {/* icons */}
+                          <TooltipTrigger className="flex items-center justify-center w-full h-[150px] bg-[#232329] rounded-xl">
+                            <div className="text-6xl transition-all duration-300">
+                              {skill.icon}
+                            </div>
+                          </TooltipTrigger>
+
+                          {/* name */}
+                          <TooltipContent>
+                            <p>{skill.name}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </li>
+                  );
+                })}
+              </ul>
             </TabsContent>
 
             {/* about */}

@@ -23,7 +23,8 @@ export const metadata = {
   title: 'Portfolio',
   description:
     'Check out the portfolio of Sérgio Oliveira, professional in [JavaScript, React, Node, TypeScript, NoSql, SQL].',
-  keywords: 'portfolio, web developer, designer, JavaScript, React.js, Next.js',
+  keywords:
+    'portfolio, web developer, fullstack developer, JavaScript, React.js, Next.js',
   openGraph: {
     title: `Sérgio Oliveira Porfolio`,
     description:

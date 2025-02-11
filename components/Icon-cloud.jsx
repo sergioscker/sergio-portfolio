@@ -2,8 +2,8 @@ import IconCloud from '@/components/ui/icon-cloud';
 
 const slugs = [
   'react',
-  'typescript',
   'javascript',
+  'typescript',
   'html5',
   'css3',
   'nodedotjs',
@@ -17,7 +17,6 @@ const slugs = [
   'mongodb',
   'expo',
   'vercel',
-  'android',
   'testinglibrary',
   'docker',
   'git',
@@ -30,6 +29,7 @@ const slugs = [
   'notion',
   'windows',
   'styled-components',
+  'jest',
 ];
 
 export function IconCloudDemo() {
