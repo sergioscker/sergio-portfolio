@@ -22,7 +22,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from 'react-icons/fa';
 
 // api emailJS
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 // contact options
 const info = [
@@ -99,7 +99,6 @@ const Contact = () => {
 
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 
     const templateParams = {
       to_name: 'Sergio',
@@ -109,8 +108,10 @@ const Contact = () => {
       message: formData.message,
     };
 
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID);
+
     await toast.promise(
-      emailjs.send(serviceID, templateID, templateParams, userID),
+      emailjs.send(serviceID, templateID, templateParams),
 
       {
         pending: 'Sending your message...',
