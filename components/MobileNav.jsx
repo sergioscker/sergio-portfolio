@@ -39,10 +39,10 @@ const MobileNav = () => {
         <CiMenuBurger className="text-[32px] dark:text-accent" />
       </SheetTrigger>
 
-      <SheetContent>
+      <SheetContent aria-describedby="dialog-title">
         {/* Title hidden for accessibility */}
-        <SheetTitle>
-          <VisuallyHidden>Menu de navegação</VisuallyHidden>
+        <SheetTitle id="dialog-title">
+          <VisuallyHidden>Navigation menu</VisuallyHidden>
         </SheetTitle>
 
         {/* logo */}

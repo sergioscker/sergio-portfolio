@@ -168,7 +168,10 @@ const Resume = () => {
                       <TooltipProvider delayDuration={100}>
                         <Tooltip>
                           {/* icons */}
-                          <TooltipTrigger className="text-accent flex items-center justify-center w-full rounded-md transition-all duration-300">
+                          <TooltipTrigger
+                            className="text-accent flex items-center justify-center w-full rounded-md transition-all duration-300"
+                            aria-label="icons"
+                          >
                             {skill.icon}
                           </TooltipTrigger>
 
