@@ -113,7 +113,7 @@ const projects = [
 
     description: `This is a web application that combines a To-Do List with the Pomodoro technique to boost productivity. It allows users to organize their tasks and manage their time using 25-minute work cycles interspersed with 5-minute breaks.`,
 
-    image: '/assets/work/todolist-pomodoro.jpeg',
+    image: '/assets/work/todolist-pomodoro.png',
 
     live: 'https://todo-list-with-pomodoro.vercel.app',
 
@@ -394,11 +394,11 @@ const Work = () => {
                       <div className="relative w-full h-full">
                         <Image
                           src={project.image}
-                          fill
                           className="object-fill"
                           quality={100}
                           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 50vw"
                           alt="project-image"
+                          fill
                         />
                       </div>
                     </div>

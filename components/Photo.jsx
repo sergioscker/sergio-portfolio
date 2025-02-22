@@ -44,9 +44,10 @@ const Photo = () => {
               alt="darkHome"
               priority
               quality={100}
-              fill
               className="object-contain"
               draggable="false"
+              width={500}
+              height={0}
             />
           ) : (
             <Image
@@ -54,9 +55,10 @@ const Photo = () => {
               alt="lightHome"
               priority
               quality={100}
-              fill
-              className="object-contain h-auto w-auto"
+              className="object-contain"
               draggable="false"
+              width={400}
+              height={0}
             />
           )}
         </motion.div>

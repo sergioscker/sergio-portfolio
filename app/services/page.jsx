@@ -44,7 +44,7 @@ export default function Services() {
           width={100}
           height={100}
           quality={100}
-          className="rotate-90 xl:rotate-0"
+          className="rotate-90 xl:rotate-0 w-auto h-auto"
         />
 
         {/* prototype */}
@@ -71,7 +71,7 @@ export default function Services() {
           width={100}
           height={100}
           quality={100}
-          className="rotate-90 xl:rotate-0"
+          className="rotate-90 xl:rotate-0 w-auto h-auto"
         />
 
         {/* development */}
@@ -98,7 +98,7 @@ export default function Services() {
           width={100}
           height={100}
           quality={100}
-          className="rotate-90 xl:rotate-0"
+          className="rotate-90 xl:rotate-0 w-auto h-auto"
         />
 
         {/* submit */}
