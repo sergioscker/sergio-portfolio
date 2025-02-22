@@ -41,6 +41,7 @@ const Services = () => {
                 width={100}
                 height={100}
               />
+              
               <h3 className="mt-4 text-2xl font-bold text-gray-300">
                 Briefing
               </h3>

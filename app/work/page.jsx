@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { useState } from 'react';
+
+// animations
 import { motion } from 'framer-motion';
 
 // slider
@@ -13,7 +15,12 @@ import 'swiper/css';
 // icons
 import { BsArrowUpRight, BsGithub } from 'react-icons/bs';
 
-import { SiStyledcomponents, SiSequelize } from 'react-icons/si';
+import {
+  SiStyledcomponents,
+  SiSequelize,
+  SiJest,
+  SiTestinglibrary,
+} from 'react-icons/si';
 
 import {
   TbBrandTypescript,
@@ -98,9 +105,32 @@ const projects = [
       { icon: <DiGit size={60} />, name: 'git' },
     ],
   },
-
   {
     id: '03',
+    title: 'TodoList Pomodoro',
+
+    category: 'Frontend',
+
+    description: `This is a web application that combines a To-Do List with the Pomodoro technique to boost productivity. It allows users to organize their tasks and manage their time using 25-minute work cycles interspersed with 5-minute breaks.`,
+
+    image: '/assets/work/todolist-pomodoro.jpeg',
+
+    live: 'https://todo-list-with-pomodoro.vercel.app',
+
+    github: 'https://github.com/sergioscker/todo-list-with-pomodoro',
+
+    stack: [
+      { icon: <DiReact size={60} />, name: 'reactJS' },
+      { icon: <DiJavascript size={60} />, name: 'javascript' },
+      { icon: <TbBrandTailwind size={60} />, name: 'tailwindcss' },
+      { icon: <DiGit size={60} />, name: 'git' },
+      { icon: <TbBrandVite size={60} />, name: 'vite' },
+      { icon: <SiJest size={60} />, name: 'jest' },
+      { icon: <SiTestinglibrary size={60} />, name: 'testing library' },
+    ],
+  },
+  {
+    id: '04',
     title: 'Burger Shop',
 
     category: 'FullStack',
@@ -129,7 +159,7 @@ const projects = [
   },
 
   {
-    id: '04',
+    id: '05',
     title: 'ToDo - List',
 
     category: 'React + NextJS',
@@ -150,30 +180,6 @@ const projects = [
       { icon: <TbBrandNextjs size={60} />, name: 'nextJS' },
       { icon: <TbBrandTailwind size={60} />, name: 'tailwindCSS' },
       { icon: <TbBrandFigma size={60} />, name: 'figmadesigner' },
-      { icon: <DiGit size={60} />, name: 'git' },
-    ],
-  },
-
-  {
-    id: '05',
-    title: 'Portfolio',
-
-    category: 'FrontEnd UI',
-
-    description: `Welcome to the repository of my personal portfolio!
-     This project was developed to reflect the evolution of my technical 
-     skills and to showcase my work in a clear and accessible way.`,
-
-    image: '/assets/work/portfolio.png',
-
-    live: 'https://sergio-oliveira-portfolio.vercel.app',
-
-    github: 'https://github.com/sergioscker/sergio-oliveira-portfolio',
-    stack: [
-      { icon: <DiJavascript size={60} />, name: 'javascript' },
-      { icon: <DiReact size={60} />, name: 'reactJS' },
-      { icon: <DiHtml5 size={60} />, name: 'html5' },
-      { icon: <SiStyledcomponents size={60} />, name: 'styled-components' },
       { icon: <DiGit size={60} />, name: 'git' },
     ],
   },
@@ -231,29 +237,6 @@ const projects = [
   },
 
   {
-    id: '08',
-    title: 'Mario Builter',
-
-    category: 'JS Vanilla',
-
-    description: `Landing Page to attract customers looking to expand their 
-    brand with form interaction for direct contact in order to request quotes.`,
-
-    image: '/assets/work/mario-bross.png',
-
-    live: 'https://mariobross-three.vercel.app',
-
-    github: 'https://github.com/sergioliveira-developer/Mario-Bross',
-
-    stack: [
-      { icon: <DiHtml5 size={60} />, name: 'html5' },
-      { icon: <DiCss3 size={60} />, name: 'css3' },
-      { icon: <DiJavascript size={60} />, name: 'javascript' },
-      { icon: <DiGit size={60} />, name: 'git' },
-    ],
-  },
-
-  {
     id: '09',
     title: 'Convert Money',
 
@@ -267,29 +250,6 @@ const projects = [
     live: 'https://converter-coins.vercel.app',
 
     github: 'https://github.com/sergioliveira-developer/Convert-Money',
-
-    stack: [
-      { icon: <DiHtml5 size={60} />, name: 'html5' },
-      { icon: <DiCss3 size={60} />, name: 'css3' },
-      { icon: <DiJavascript size={60} />, name: 'javascript' },
-      { icon: <DiGit size={60} />, name: 'git' },
-    ],
-  },
-
-  {
-    id: '10',
-    title: 'Game JO-KEN-PÔ',
-
-    category: 'JS Vanilla',
-
-    description: `Game for user entertainment with pure JavaScript logic, demonstrating the use of functions, 
-    searching for elements in HTML and styling with CSS3.`,
-
-    image: '/assets/work/jo-ken-po.png',
-
-    live: 'https://project-jo-ken-po.vercel.app',
-
-    github: 'https://github.com/sergioliveira-developer/Game-Jokenpo',
 
     stack: [
       { icon: <DiHtml5 size={60} />, name: 'html5' },
@@ -356,6 +316,7 @@ const Work = () => {
                               {item.icon}
                             </span>
                           </TooltipTrigger>
+
                           <TooltipContent>
                             <span>{item.name}</span>
                           </TooltipContent>
@@ -382,6 +343,7 @@ const Work = () => {
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full dark:bg-white/5 bg-accent flex justify-center items-center group">
                         <BsArrowUpRight className="dark:text-white text-3xl group-hover:text-accent-hover" />
                       </TooltipTrigger>
+
                       <TooltipContent>
                         <p>Live project</p>
                       </TooltipContent>

@@ -27,21 +27,21 @@ const HomePage = () => {
 
             <p className="max-w-[500px] mb-9 dark:text-white/70">
               I develop digital experiences with a focus on elegance and
-              functionality, I have a portfolio of projects that reflect my
-              skills in different languages and technologies.
+              functionality,this portfolio of projects that reflect my skills in
+              different technologies and tools.
             </p>
 
             {/* btn and sociais */}
             <div className="flex flex-col xl:flex-row items-center gap-8 ">
               <Link
-                href="/assets/resume - Full Stack Developer.pdf"
+                href="/assets/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button
                   variant="outline"
                   size="lg"
-                  className="uppercase flex items-center gap-2"
+                  className="uppercase flex items-center gap-3"
                 >
                   <span>Download CV</span>
                   <FiDownload className="text-xl" />

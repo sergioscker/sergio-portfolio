@@ -13,18 +13,20 @@ import ClientOnly from '@/components/ClientOnly';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// fonts style
 const jetBrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-jetbrainsMono',
   weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
 });
 
+// SEO
 export const metadata = {
   title: 'Portfolio',
   description:
-    'Check out the portfolio of Sérgio Oliveira, professional in [JavaScript, React, Node, TypeScript, NoSql, SQL].',
+    'Check out the portfolio of Sérgio Oliveira, professional in [JavaScript, React, Nodejs, TypeScript, Nextjs, NoSql, SQL].',
   keywords:
-    'portfolio, web developer, fullstack developer, JavaScript, React.js, Next.js',
+    'portfolio, web developer, frontend developer, fullstack developer, JavaScript, Reactjs, Nextjs',
   openGraph: {
     title: `Sérgio Oliveira Porfolio`,
     description:
@@ -33,10 +35,19 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '',
+        url: 'https://sergio-portfolio-six.vercel.app/assets/favicon.svg',
         alt: 'logo',
       },
     ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 

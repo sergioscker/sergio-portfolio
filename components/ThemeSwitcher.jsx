@@ -15,7 +15,7 @@ export default function ThemeSwitcher() {
      transition delay-100 ease-linear z-40"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
-      {theme === 'dark' ? <FaSun size={40} /> : <FaMoon size={40} />}
+      {theme === 'dark' ? <FaSun size={30} /> : <FaMoon size={30} />}
     </button>
   );
 }

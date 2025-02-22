@@ -160,8 +160,8 @@ const Contact = () => {
 
               {/* input container */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Name input */}
                 <div className="flex flex-col justify-center p-2">
-                  {/* Name input */}
                   <Input
                     type="text"
                     name="name"
