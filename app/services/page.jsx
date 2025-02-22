@@ -3,177 +3,122 @@ import { motion } from 'framer-motion';
 
 import Image from 'next/image';
 
-const Services = () => {
+import React from 'react';
+
+export default function Services() {
   return (
-    <section className="pt-20 xl:pt-20 px-4 sm:px-8 xl:px-[200px]">
-      <h2 className="font-primary font-bold text-[32px] xl:text-[75px] text-center mb-8">
-        Workflow
+    <section className="container px-5 py-5">
+      <h2 className="font-semibold text-white/90 text-5xl text-center mb-10 p-5">
+        WorkFlow
       </h2>
 
       <motion.div
-        className="flex flex-col xl:flex-row justify-around items-center lg:space-y-0 
-        space-y-6 lg:space-x-6 w-full"
+        className="flex flex-col xl:flex-row flex-wrap items-center justify-center space-y-6 w-full p-10"
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
           transition: { delay: 2, duration: 0.4, ease: 'easeIn' },
         }}
       >
-        {/* Briefing */}
-        <div
-          className="flex flex-col items-center w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px]
-        xl:max-w-[250px] 2xl:max-w-[300px]"
-        >
+        {/* breafing */}
+        <div className="flex items-center justify-center bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white/10 rounded-lg shadow-md p-5 w-[230px] h-[250px] mt-6">
           <div
-            className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px]
-           border border-white/10 rounded-lg shadow-md w-full h-[320px] 
-           flex flex-col items-center justify-center text-center p-4"
+            className="flex flex-col justify-center gap-3 items-center bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] 
+            backdrop-blur-[4px] border border-white/10 rounded-lg p-6 w-[200px] h-[200px]"
           >
-            <div
-              className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] 
-            backdrop-blur-[4px] border border-white/10 rounded-lg 
-            shadow-md w-full h-[320px] flex flex-col items-center justify-center text-center p-4"
-            >
-              <Image
-                src="/assets/work/briefing.svg"
-                alt="briefing"
-                quality={100}
-                width={100}
-                height={100}
-              />
-              
-              <h3 className="mt-4 text-2xl font-bold text-gray-300">
-                Briefing
-              </h3>
-            </div>
+            <Image
+              src="/assets/work/briefing.svg"
+              alt="briefing-logo"
+              width={70}
+              height={70}
+              quality={100}
+            />
+
+            <p>Briefing</p>
           </div>
         </div>
 
-        {/* Arrow */}
-        <div className="flex items-center justify-center xl:w-[160px] h-full xl:h-[320px]">
-          <Image
-            src="/assets/work/arrow.svg"
-            alt="arrow"
-            quality={100}
-            width={32}
-            height={32}
-            className="object-contain w-full h-full xl:rotate-0 rotate-90"
-          />
-        </div>
+        <Image
+          src="/assets/work/arrow.svg"
+          alt="arrow-icon"
+          width={100}
+          height={100}
+          quality={100}
+          className="rotate-90 xl:rotate-0"
+        />
 
-        {/* Prototype */}
-        <div
-          className="flex flex-col items-center w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px]
-        xl:max-w-[250px] 2xl:max-w-[300px]"
-        >
+        {/* prototype */}
+        <div className="flex items-center justify-center bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white/10 rounded-lg shadow-md p-5 w-[230px] h-[250px]">
           <div
-            className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] 
-          border border-white/10 rounded-lg shadow-md w-full h-[320px] flex flex-col 
-          items-center justify-center text-center p-4"
+            className="flex flex-col justify-center gap-3 items-center bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] 
+            backdrop-blur-[4px] border border-white/10 rounded-lg p-6 w-[200px] h-[200px]"
           >
-            <div
-              className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px] 
-            border border-white/10 rounded-lg shadow-md w-full h-[320px] flex flex-col 
-            items-center justify-center text-center p-4"
-            >
-              <Image
-                src="/assets/work/prototype.svg"
-                alt="briefing"
-                quality={100}
-                width={100}
-                height={100}
-              />
-              <h3 className="mt-4 text-2xl font-bold text-gray-300">
-                Prototype
-              </h3>
-            </div>
+            <Image
+              src="/assets/work/prototype.svg"
+              alt="prototype-logo"
+              width={70}
+              height={70}
+              quality={100}
+            />
+
+            <p>Prototype</p>
           </div>
         </div>
 
-        {/* Arrow */}
-        <div className="flex items-center justify-center xl:w-[160px] h-full xl:h-[320px]">
-          <Image
-            src="/assets/work/arrow.svg"
-            alt="arrow"
-            quality={100}
-            width={32}
-            height={32}
-            className="object-contain w-full h-full xl:rotate-0 rotate-90"
-          />
-        </div>
+        <Image
+          src="/assets/work/arrow.svg"
+          alt="arrow-icon"
+          width={100}
+          height={100}
+          quality={100}
+          className="rotate-90 xl:rotate-0"
+        />
 
-        {/* Development */}
-        <div
-          className="flex flex-col items-center w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px]
-        xl:max-w-[250px] 2xl:max-w-[300px]"
-        >
+        {/* development */}
+        <div className="flex items-center justify-center bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white/10 rounded-lg shadow-md p-5 w-[230px] h-[250px]">
           <div
-            className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px]
-           border border-white/10 rounded-lg shadow-md w-full h-[320px] flex flex-col
-            items-center justify-center text-center p-4"
+            className="flex flex-col justify-center gap-3 items-center bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] 
+            backdrop-blur-[4px] border border-white/10 rounded-lg p-6 w-[200px] h-[200px] "
           >
-            <div
-              className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px] 
-            border border-white/10 rounded-lg shadow-md w-full h-[320px] flex flex-col
-             items-center justify-center text-center p-4"
-            >
-              <Image
-                src="/assets/work/development.svg"
-                alt="briefing"
-                quality={100}
-                width={100}
-                height={100}
-              />
-              <h3 className="mt-4 text-2xl font-bold text-gray-300">
-                Development
-              </h3>
-            </div>
+            <Image
+              src="/assets/work/development.svg"
+              alt="development-logo"
+              width={70}
+              height={70}
+              quality={100}
+            />
+
+            <p>Development</p>
           </div>
         </div>
 
-        {/* Arrow */}
-        <div className="flex items-center justify-center xl:w-[160px] h-full xl:h-[320px]">
-          <Image
-            src="/assets/work/arrow.svg"
-            alt="arrow"
-            quality={100}
-            width={32}
-            height={32}
-            className="object-contain w-full h-full xl:rotate-0 rotate-90"
-          />
-        </div>
+        <Image
+          src="/assets/work/arrow.svg"
+          alt="arrow-icon"
+          width={100}
+          height={100}
+          quality={100}
+          className="rotate-90 xl:rotate-0"
+        />
 
-        {/* Submit */}
-        <div
-          className="flex flex-col items-center w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px]
-        xl:max-w-[250px] 2xl:max-w-[300px]"
-        >
+        {/* submit */}
+        <div className="flex items-center justify-center bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px] border border-white/10 rounded-lg shadow-md p-5 w-[230px] h-[250px]">
           <div
-            className="bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] backdrop-blur-[4px]
-           border border-white/10 rounded-lg shadow-md w-full h-[320px] flex flex-col 
-           items-center justify-center text-center p-4"
+            className="flex flex-col justify-center gap-3 items-center bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] 
+            backdrop-blur-[4px] border border-white/10 rounded-lg p-6 w-[200px] h-[200px]"
           >
-            <div
-              className="bg-gradient-to-b from-[#8c8c8c10] to-[#3d3d3d36] backdrop-blur-[4px]
-             border border-white/10 rounded-lg shadow-md w-full h-[320px] flex flex-col
-              items-center justify-center text-center p-4"
-            >
-              <Image
-                src="/assets/work/submit.svg"
-                alt="briefing"
-                quality={100}
-                width={100}
-                height={100}
-              />
-              <h3 className="mt-4 text-2xl font-bold text-gray-300">
-                Submit/Support
-              </h3>
-            </div>
+            <Image
+              src="/assets/work/submit.svg"
+              alt="submit-logo"
+              width={70}
+              height={70}
+              quality={100}
+            />
+
+            <p>Submit/Support</p>
           </div>
         </div>
       </motion.div>
     </section>
   );
-};
-
-export default Services;
+}
