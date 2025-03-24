@@ -16,7 +16,6 @@ module.exports = {
       md: '768px',
       lg: '1024px',
       xl: '1400px',
-      '2xl': '1600px',
     },
     fontFamily: {
       primary: ['JetBrains', 'sans-serif'],
@@ -25,7 +24,7 @@ module.exports = {
       colors: {
         primary: '#0a0a0a',
         accent: {
-          DEFAULT: '#0086b0',
+          default: '#0086b0',
           hover: '#01579b',
         },
         borderRadius: {

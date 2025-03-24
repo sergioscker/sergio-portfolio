@@ -32,7 +32,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://sergioliveira-portfolio.vercel.app/assets/favicon.svg',
+        url: '',
         alt: 'logo',
       },
     ],
@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
       </head>
-      
+
       <body className={`${jetBrainsMono.variable}  antialiased`}>
         <ClientOnly>
           <ThemeProviderWrapper>
