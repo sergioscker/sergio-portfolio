@@ -16,6 +16,7 @@ import { usePathname } from 'next/navigation';
 import { CiMenuBurger } from 'react-icons/ci';
 
 import { VisuallyHidden } from '@reach/visually-hidden';
+
 import Image from 'next/image';
 
 const links = [
@@ -28,6 +29,7 @@ const links = [
 
 const MobileNav = () => {
   const pathname = usePathname();
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -42,14 +44,14 @@ const MobileNav = () => {
       <SheetContent aria-describedby="dialog-title">
         {/* Title hidden for accessibility */}
         <SheetTitle id="dialog-title">
-          <VisuallyHidden>Navigation menu</VisuallyHidden>
+          <VisuallyHidden>Navigation Menu</VisuallyHidden>
         </SheetTitle>
 
         {/* logo */}
         <div className="flex items-center justify-center mt-28 pb-5">
           <Link href="/">
             <Image
-              src="/assets/favicon.svg"
+              src="/assets/icon.svg"
               alt="icon"
               priority
               quality={100}
@@ -72,7 +74,7 @@ const MobileNav = () => {
                 className={`${
                   link.path === pathname &&
                   'text-accent border-b-2 border-accent'
-                } text-xl text-white capitalize hover:text-accent-hover transition-all`}
+                } text-xl capitalize hover:text-accent-hover transition-all`}
               >
                 {link.name}
               </Link>

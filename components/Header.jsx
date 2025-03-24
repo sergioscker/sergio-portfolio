@@ -13,7 +13,7 @@ export const Header = () => {
         {/* logo */}
         <Link href="/">
           <Image
-            src="/assets/favicon.svg"
+            src="/assets/icon.svg"
             alt="icon"
             priority
             quality={100}

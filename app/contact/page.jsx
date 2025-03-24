@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 
+// validations
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -10,6 +11,7 @@ import { motion } from 'framer-motion';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// navigation
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
@@ -142,14 +144,6 @@ const Contact = () => {
 
   return (
     <>
-      {/* notifications */}
-      <ToastContainer
-        autoClose={2000}
-        theme="colored"
-        position="top-right"
-        draggable
-      />
-
       <motion.section
         initial={{ opacity: 0 }}
         animate={{
@@ -288,7 +282,8 @@ const Contact = () => {
                     className="flex flex-col xl:flex-row items-center gap-6"
                   >
                     <div
-                      className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36]
+                      className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] 
+                      bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36]
                      text-accent rounded-md flex items-center justify-center"
                     >
                       <div className="text-[28px]">{item.icon}</div>
@@ -310,6 +305,15 @@ const Contact = () => {
           </div>
         </div>
       </motion.section>
+
+      {/* notifications */}
+      <ToastContainer
+        autoClose={2000}
+        pauseOnHover
+        theme="colored"
+        position="top-right"
+        draggable
+      />
     </>
   );
 };

@@ -53,6 +53,11 @@ const experience = {
 const education = {
   title: 'Education',
   items: [
+    {
+      institution: 'Universidade Veiga de Almeida',
+      degree: 'Bachelor’s Degree in Systems Analysis and Development',
+      evolution: 'In Progress',
+    },
     { institution: 'Dev Club', degree: 'FullStack Developer' },
     { institution: 'Video Course', degree: 'JavaScript Developer' },
   ],
@@ -137,7 +142,8 @@ const Resume = () => {
                     {education.items.map((item, index) => (
                       <li
                         key={index}
-                        className="bg-[#232329] text-white rounded-xl p-5 flex flex-col items-center justify-center gap-3 w-full max-w-[300px]"
+                        className="bg-[#232329] text-white rounded-xl p-5 flex flex-col items-center 
+                        justify-center gap-3 w-full max-w-[400px]"
                       >
                         <div className="flex gap-2 items-start justify-between w-full">
                           <h3 className="text-xl text-white max-w-[260px] min-h-[60px] text-center lg:text-left">
@@ -152,10 +158,10 @@ const Resume = () => {
                           />
                         </div>
 
-                        <div className="flex items-center gap-3 ">
+                        <div className="flex  items-center justify-center gap-3">
                           {/* dot */}
-                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                          <p className="text-white/60">{item.degree}</p>
+                          <span className="w-[8px] h-[8px] rounded-full bg-accent"></span>
+                          <p className="text-white/60 w-full">{item.degree}</p>
                         </div>
                       </li>
                     ))}
@@ -174,7 +180,8 @@ const Resume = () => {
                         <Tooltip>
                           {/* icons */}
                           <TooltipTrigger
-                            className="text-accent flex items-center justify-center w-full rounded-md transition-all duration-300"
+                            className="text-accent flex items-center justify-center w-full 
+                            rounded-md transition-all duration-300"
                             aria-label="icons"
                           >
                             {skill.icon}

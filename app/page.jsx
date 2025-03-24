@@ -11,13 +11,13 @@ import Link from 'next/link';
 
 const HomePage = () => {
   return (
-    <section className="h-full pt-20 mt-10">
+    <section className="h-full pt-14 mt-10">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-around xl:pt-6 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">
-              Software Developer | Frontend Developer
+              Software Developer | Full Stack Developer
             </span>
 
             <h1 className="h1 mb-6 mt-6">
@@ -25,7 +25,7 @@ const HomePage = () => {
               <span className="text-accent">Sérgio Oliveira</span>
             </h1>
 
-            <p className="max-w-[500px] mb-9 dark:text-white/70">
+            <p className="max-w-lg mb-9 dark:text-white/70">
               I develop digital experiences with a focus on elegance and
               functionality,this portfolio of projects that reflect my skills in
               different technologies and tools.
@@ -34,7 +34,7 @@ const HomePage = () => {
             {/* btn and sociais */}
             <div className="flex flex-col xl:flex-row items-center gap-8 ">
               <Link
-                href="/assets/resume.pdf"
+                href="/Frontend Developer.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
