@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 // icons
 import { SiStyledcomponents, SiSequelize, SiTailwindcss } from 'react-icons/si';
+
 import {
   TbBrandTypescript,
   TbBrandPrisma,
@@ -12,6 +13,7 @@ import {
   TbBrandVite,
   TbBrandFigma,
 } from 'react-icons/tb';
+
 import {
   DiHtml5,
   DiCss3,
@@ -22,11 +24,14 @@ import {
   DiMongodb,
   DiPostgresql,
 } from 'react-icons/di';
+
 import { FaDocker } from 'react-icons/fa';
 
 // components
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+
 import { ScrollArea } from '@/components/ui/scroll-area';
+
 import {
   Tooltip,
   TooltipContent,

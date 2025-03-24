@@ -21,18 +21,18 @@ const jetBrainsMono = JetBrains_Mono({
 export const metadata = {
   title: 'Portfolio',
   description:
-    'Check out the portfolio of Sérgio Oliveira, professional in [JavaScript, React, Nodejs, TypeScript, Nextjs, NoSql, SQL].',
+    'Check out the portfolio of Sérgio Oliveira, professional in [JavaScript, React, Nodejs, TypeScript, Nextjs, Databases...].',
   keywords:
-    'portfolio, web developer, frontend developer, fullstack developer, JavaScript, Reactjs, Nextjs',
+    'portfolio, web developer, frontend developer, fullstack developer, JavaScript, Reactjs, Nextjs, Nodejs',
   openGraph: {
     title: `Sérgio Oliveira Porfolio`,
     description:
       'Discover high quality projects and design by Sérgio Oliveira.',
-    url: 'https://sergio-portfolio-six.vercel.app',
+    url: 'https://sergioliveira-portfolio.vercel.app',
     type: 'website',
     images: [
       {
-        url: 'https://sergio-portfolio-six.vercel.app/assets/favicon.svg',
+        url: 'https://sergioliveira-portfolio.vercel.app/assets/favicon.svg',
         alt: 'logo',
       },
     ],
@@ -54,6 +54,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
       </head>
+      
       <body className={`${jetBrainsMono.variable}  antialiased`}>
         <ClientOnly>
           <ThemeProviderWrapper>
