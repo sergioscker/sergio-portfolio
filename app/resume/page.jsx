@@ -5,27 +5,25 @@ import Image from 'next/image';
 
 // icons
 import { SiStyledcomponents, SiSequelize, SiTailwindcss } from 'react-icons/si';
+import { DiAws, DiMongodb, DiPostgresql } from 'react-icons/di';
 
 import {
   TbBrandTypescript,
   TbBrandPrisma,
   TbBrandNextjs,
   TbBrandVite,
-  TbBrandFigma,
 } from 'react-icons/tb';
 
 import {
-  DiHtml5,
-  DiCss3,
-  DiReact,
-  DiJavascript,
-  DiNodejs,
-  DiAws,
-  DiMongodb,
-  DiPostgresql,
-} from 'react-icons/di';
-
-import { FaDocker } from 'react-icons/fa';
+  FaHtml5,
+  FaCss3,
+  FaGit,
+  FaReact,
+  FaNodeJs,
+  FaJs,
+  FaFigma,
+  FaDocker,
+} from 'react-icons/fa';
 
 // components
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -41,6 +39,7 @@ import {
 
 // experience data
 const experience = {
+  icon: '/assets/resume/badge.svg',
   title: 'Experience',
   description: `I have been delving into full stack development with an emphasis on JavaScript, ReactJS, NextJS, TypeScript, NodeJS... always seeking continuous improvement.
 
@@ -54,12 +53,21 @@ const education = {
   title: 'Education',
   items: [
     {
-      institution: 'Universidade Veiga de Almeida',
-      degree: 'Bachelor’s Degree in Systems Analysis and Development',
-      evolution: 'In Progress',
+      company: 'Universidade Veiga de Almeida',
+      degree: `Bachelor’s Degree in
+      Systems Analysis and Development`,
+      duration: 'In Progress',
     },
-    { institution: 'Dev Club', degree: 'FullStack Developer' },
-    { institution: 'Video Course', degree: 'JavaScript Developer' },
+    {
+      company: 'Dev Club Pro',
+      degree: 'Certified FullStack Developer',
+      duration: '2023 - 2024',
+    },
+    {
+      company: 'Video Course',
+      degree: 'Certified JavaScript Developer ',
+      duration: '2024',
+    },
   ],
 };
 
@@ -67,15 +75,17 @@ const education = {
 const skills = {
   title: 'Technologies and Tools',
   skillsList: [
-    { icon: <DiHtml5 size={50} />, name: 'HTML5' },
-    { icon: <DiReact size={50} />, name: 'ReactJS' },
-    { icon: <DiJavascript size={50} />, name: 'JavaScript' },
+    { icon: <FaHtml5 size={50} />, name: 'HTML5' },
+    { icon: <FaReact size={50} />, name: 'ReactJS' },
+    { icon: <FaJs size={50} />, name: 'JavaScript' },
+    { icon: <FaCss3 size={50} />, name: 'Css3' },
+    { icon: <FaGit size={50} />, name: 'Git' },
     { icon: <TbBrandVite size={50} />, name: 'Vite' },
     { icon: <TbBrandTypescript size={50} />, name: 'TypeScript' },
-    { icon: <DiNodejs size={50} />, name: 'NodeJS' },
+    { icon: <FaNodeJs size={50} />, name: 'NodeJS' },
+    { icon: <FaFigma size={50} />, name: 'Figma' },
     { icon: <SiStyledcomponents size={50} />, name: 'Styled-components' },
     { icon: <SiTailwindcss size={50} />, name: 'TailwindCSS' },
-    { icon: <TbBrandFigma size={50} />, name: 'Figma' },
     { icon: <FaDocker size={50} />, name: 'Docker' },
     { icon: <DiPostgresql size={50} />, name: 'PostgreSQL' },
     { icon: <DiMongodb size={50} />, name: 'MongoDB' },
@@ -89,11 +99,13 @@ const skills = {
 // about data
 const about = {
   title: 'About me',
-  description: `I'm Sérgio Oliveira, I'm 27 years old, and I've been living in Portugal for about 2 years. Planning my move to Portugal required a lot of organization and contributed greatly to my perception of what I wanted to become professionally. I took my first steps in programming by studying logic and algorithms, based on several recommendations from colleagues in the field, with whom I've always kept in touch, seeking guidance on the big question: "Where do I start?"
+  description: `I’m Sérgio Oliveira, a Front-end Developer with a strong foundation in JavaScript and modern web technologies. Currently, I’m pursuing a degree in Systems Analysis and Development, which allows me to deepen my understanding of software architecture, databases, and scalable applications.
 
-  I started exploring the JavaScript programming language, which allowed me to learn technologies that go hand in hand, such as HTML5 and CSS3. I learned important styling libraries in addition to pure CSS, such as Styled-components. To expand my knowledge, I started studying the ReactJS library and all the power that this open source technology can bring. To make my creations increasingly modern and scalable, I began to dedicate myself to studying several other technologies, such as Tailwind, Bootstrap, NodeJS, NextJS (Server Components and Actions), SQL, and NoSQL.
+  My programming journey began with logic and algorithms, always guided by experienced professionals in the field. Over time, I specialized in building high-performance and scalable applications using technologies like ReactJS, NextJS (Server Components and Actions), NodeJS, Tailwind, Bootstrap, SQL, and NoSQL. I also have solid experience with HTML5, CSS3, and Styled-components, ensuring responsive and visually appealing interfaces.
 
-  Currently, I develop freelance and personal projects always aiming to bring the most realistic scenario possible that made me learn to solve problems and overcome challenges. Using my network of people I have become friends with on this journey, I managed to find clients to become a professional in the field and start to create the desire to build a career that I hope will be successful and productive for me and the company I will be involved with.,`,
+  I have been working on freelance and personal projects, always focusing on solving real-world problems and optimizing user experiences. My ability to learn quickly, combined with my hands-on experience, has allowed me to deliver solutions that meet market demands. Additionally, I love networking and engaging in mutual collaboration.
+
+  I’m looking for new opportunities where I can apply my knowledge, collaborate with forward-thinking teams, and contribute to innovative projects. If you're looking for a developer who is proactive, adaptable, and passionate about technology, I’d love to connect!`,
 };
 
 const Resume = () => {
@@ -104,64 +116,65 @@ const Resume = () => {
         opacity: 1,
         transition: { delay: 0.2, duration: 0.4, ease: 'easeIn' },
       }}
-      className="container mx-auto p-4 md:p-8"
+      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-5"
     >
-      <div className="w-full">
-        <Tabs defaultChecked="experience" className="flex flex-col lg:flex-row">
-          <TabsList className="flex flex-col w-full max-w-[300px] mx-auto lg:mx-0 gap-4">
+      <div className="container mx-auto">
+        <Tabs
+          defaultChecked="experience"
+          className="flex flex-col xl:flex-row gap-[60px]"
+        >
+          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto lg:mx-0 gap-6">
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
 
-          {/* Content */}
-          <div className="min-h-[70vh] w-full p-4 md:p-6">
+          {/* content */}
+          <div className="min-h-[70vh] w-full">
             {/* Experience */}
             <TabsContent value="experience" className="w-full">
-              <div className="flex flex-col gap-6">
-                <h3 className="text-2xl md:text-4xl font-bold text-center">
-                  {experience.title}
-                </h3>
+              <div className="flex flex-col gap-[30px] text-center">
+                <h3 className="text-4xl font-bold">{experience.title}</h3>
 
-                <p className="max-w-[700px] text-left mx-auto text-gray-600 dark:text-white/60">
+                <p className="max-w-[600px] xl:text-left text-center mx-auto text-gray-600 dark:text-white/60">
                   {experience.description}
                 </p>
               </div>
             </TabsContent>
 
             {/* Education */}
-            <TabsContent value="education">
-              <div className="flex flex-col items-center gap-6">
-                <h3 className="text-2xl md:text-4xl font-bold p-3">
-                  {education.title}
-                </h3>
+            <TabsContent value="education" className="w-full">
+              <div className="flex flex-col items-center gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">{education.title}</h3>
 
-                <ScrollArea className="w-full">
-                  <ul className="flex flex-wrap justify-center gap-6">
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-flow-col-1 lg:grid-cols-2 gap-[30px]">
                     {education.items.map((item, index) => (
                       <li
                         key={index}
-                        className="bg-[#232329] text-white rounded-xl p-5 flex flex-col items-center 
-                        justify-center gap-3 w-full max-w-[400px]"
+                        className="bg-[#232329] h-[184px] py-8 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-3 w-full"
                       >
-                        <div className="flex gap-2 items-start justify-between w-full">
-                          <h3 className="text-xl text-white max-w-[260px] min-h-[60px] text-center lg:text-left">
-                            {item.institution}
-                          </h3>
+                        <span className="text-accent flex justify-between w-full items-start font-medium">
+                          {item.duration}
 
                           <Image
-                            src="/assets/resume/badge.svg"
+                            src="/assets/resume/cap.svg"
                             alt="education-icon"
-                            width={20}
-                            height={20}
+                            width={25}
+                            height={25}
                           />
-                        </div>
+                        </span>
 
-                        <div className="flex  items-center justify-center gap-3">
+                        <h3 className="text-xl text-center xl:text-left max-w-[320px] min-h-[80px]">
+                          {item.degree}
+                        </h3>
+
+                        <div className="flex items-center justify-center gap-5">
                           {/* dot */}
-                          <span className="w-[8px] h-[8px] rounded-full bg-accent"></span>
-                          <p className="text-white/60 w-full">{item.degree}</p>
+                          <span className="w-[8px] h-[8px] rounded-full bg-accent" />
+
+                          <p className="text-white/60">{item.company}</p>
                         </div>
                       </li>
                     ))}
@@ -171,7 +184,7 @@ const Resume = () => {
             </TabsContent>
 
             {/* skills */}
-            <TabsContent value="skills" className="h-full w-full">
+            <TabsContent value="skills" className="w-full">
               <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[40px] p-5">
                 {skills.skillsList.map((skill, index) => {
                   return (
