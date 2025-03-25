@@ -157,7 +157,7 @@ const Contact = () => {
             {/* form */}
             <div className="order-2 xl:order-none">
               <form
-                className="flex flex-col gap-6 p-8 bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36] rounded-xl"
+                className="flex flex-col gap-6 p-8 bg-[#232329] rounded-lg"
                 onSubmit={handleSubmit(onSubmitForm)}
               >
                 <h3 className="text-4xl text-accent">Let's work together</h3>
@@ -241,12 +241,12 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* text message */}
+                {/* text area */}
                 <div className="flex flex-col justify-center p-2">
                   <Textarea
                     name="message"
                     {...register('message')}
-                    className="h-[200px] text-white"
+                    className="h-[150px] text-white"
                     placeholder="Type your message here."
                     value={formData.message}
                     onChange={handleChange}
@@ -271,10 +271,7 @@ const Contact = () => {
             </div>
 
             {/* information */}
-            <div
-              className="flex items-center justify-center order-1 xl:order-none 
-          mb-8 xl:mb-0 pt-5 overflow-x-hidden"
-            >
+            <div className="flex items-center justify-center order-1 xl:order-none mb-8 xl:mb-0 pt-5 overflow-x-hidden">
               <ul className="flex flex-col gap-10">
                 {info.map((item, index) => (
                   <li
@@ -283,8 +280,7 @@ const Contact = () => {
                   >
                     <div
                       className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] 
-                      bg-gradient-to-b from-[#8c8c8c25] to-[#3d3d3d36]
-                     text-accent rounded-md flex items-center justify-center"
+                      bg-[#232329] text-accent rounded-md flex items-center justify-center"
                     >
                       <div className="text-[28px]">{item.icon}</div>
                     </div>

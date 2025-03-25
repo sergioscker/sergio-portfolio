@@ -8,9 +8,7 @@ import React from 'react';
 export default function Services() {
   return (
     <section className="container px-5 py-5">
-      <h2 className="font-semibold text-white/90 text-5xl text-center mb-10 p-5">
-        WorkFlow
-      </h2>
+      <h2 className="font-semibold text-5xl text-center mb-10 p-5">WorkFlow</h2>
 
       <motion.div
         className="flex flex-col xl:flex-row flex-wrap items-center justify-center space-y-6 w-full p-10"
@@ -32,6 +30,7 @@ export default function Services() {
               width={70}
               height={70}
               quality={100}
+              className="text-accent"
             />
 
             <p>Briefing</p>
