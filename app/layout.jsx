@@ -26,17 +26,11 @@ export const metadata = {
   keywords:
     'portfolio, web developer, frontend developer, fullstack developer, JavaScript, Reactjs, Nextjs, Nodejs',
   openGraph: {
-    title: `Sérgio Oliveira Porfolio`,
+    title: `Sérgio Oliveira Portfolio`,
     description:
       'Discover high quality projects and design by Sérgio Oliveira.',
     url: 'https://sergioliveira-portfolio.vercel.app',
     type: 'website',
-    images: [
-      {
-        url: '',
-        alt: 'logo',
-      },
-    ],
   },
   robots: {
     index: true,
