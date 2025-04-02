@@ -103,13 +103,21 @@ const skills = {
 // about data
 const about = {
   title: 'About me',
-  description: `I’m Sérgio Oliveira, a Front-end Developer with a strong foundation in JavaScript and modern web technologies. Currently, I’m pursuing a degree in Systems Analysis and Development, which allows me to deepen my understanding of software architecture, databases, and scalable applications.
+  description: `I’m m Sérgio Oliveira, a Full Stack Developer with focus on building modern, responsive webapplications. 
+  I'm currently studying Systems Analysis and Development, where I m learninghow to design scalable systems, work with databases, and improve software architecture.
 
-  My programming journey began with logic and algorithms, always guided by experienced professionals in the field. Over time, I specialized in building high-performance and scalable applications using technologies like ReactJS, NextJS (Server Components and Actions), NodeJS, Tailwind, Bootstrap, SQL, and NoSQL. I also have solid experience with HTML5, CSS3, and Styled-components, ensuring responsive and visually appealing interfaces.
+  My journey in tech started with logic and algorithms, and since then I ve grown by building
+  applications that solve real problems. In my portfolio, you ll find projects developed with
+  ReactJS, NextJS, NodeJS, Tailwind CSS, SQL, and NoSQL always with attention to
+  clean code, usability, and performance. I also have solid experience with HTML, CSS, and
+  Styled-components, creating interfaces that are both functional and visually appealing.
 
-  I have been working on freelance and personal projects, always focusing on solving real-world problems and optimizing user experiences. My ability to learn quickly, combined with my hands-on experience, has allowed me to deliver solutions that meet market demands. Additionally, I love networking and engaging in mutual collaboration.
+  I'm always looking to improve. Every project I build is a new opportunity to learn
+  something, face new challenges, and go a step further. I enjoy working in teams, sharing
+  knowledge, and turning ideas into real solutions that make a difference.
 
-  I’m looking for new opportunities where I can apply my knowledge, collaborate with forward-thinking teams, and contribute to innovative projects. If you're looking for a developer who is proactive, adaptable, and passionate about technology, I’d love to connect!`,
+  Now, I m looking for an opportunity to join a team where I can grow, contribute with my
+  skills, and keep building great things.`,
 };
 
 const Resume = () => {
