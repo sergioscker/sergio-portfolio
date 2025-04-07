@@ -6,11 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@hookform/resolvers": "^3.9.1",
+    "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-scroll-area": "^1.2.0",
     "@radix-ui/react-slot": "^1.1.0",
@@ -19,8 +20,9 @@
     "@reach/visually-hidden": "^0.18.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.11.10",
+    "framer-motion": "^12.6.3",
     "next": "15.0.1",
+    "next-sitemap": "^4.2.3",
     "next-themes": "^0.4.3",
     "react": "19.0.0-rc-69d4b800-20241021",
     "react-dom": "19.0.0-rc-69d4b800-20241021",

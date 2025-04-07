@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://sergioliveira-portfolio.vercel.app
+
+# Sitemaps
+Sitemap: https://sergioliveira-portfolio.vercel.app/sitemap.xml

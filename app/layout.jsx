@@ -4,6 +4,7 @@ import './globals.css';
 
 //components
 import PageTransition from '@/components/PageTransition';
+
 // import StairTransition from '@/components/StairTransition';
 import { Header } from '@/components/Header';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
@@ -20,22 +21,23 @@ const jetBrainsMono = JetBrains_Mono({
 
 // SEO
 export const metadata = {
-  title: 'Portfolio',
+  title: 'Sérgio Oliveira | Fullstack Developer',
   description:
-    'Check out the portfolio of Sérgio Oliveira, professional in [JavaScript, React, Nodejs, TypeScript, Nextjs, Databases...].',
+    'Portfólio profissional de Sérgio Oliveira, desenvolvedor web fullstack especializado em JavaScript, React, Node.js, TypeScript e Next.js. Veja projetos de alta performance e design moderno.',
   keywords:
-    'portfolio, web developer, frontend developer, fullstack developer, JavaScript, Reactjs, Nextjs, Nodejs',
+    'Sérgio Oliveira, portfolio desenvolvedor web, fullstack developer, frontend, JavaScript, React, Next.js, Node.js, TypeScript, projetos web',
   openGraph: {
-    title: `Sérgio Oliveira Portfolio`,
+    title: 'Portfólio | Sérgio Oliveira',
     description:
-      'Discover high quality projects and design by Sérgio Oliveira.',
+      'Explore os projetos desenvolvidos por Sérgio Oliveira: soluções modernas em React, Node.js, e mais.',
+
     url: 'https://sergioliveira-portfolio.vercel.app',
     type: 'website',
   },
   robots: {
     index: true,
     follow: true,
-    nocache: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
@@ -46,6 +48,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="S4CLoUW9Lhz9BwQGpCYQw1kK9LWIxFI2aWJaFR9xZfc"
+        />
+      </head>
+
       <body className={`${jetBrainsMono.variable}  antialiased`}>
         <ClientOnly>
           <ThemeProviderWrapper>
