@@ -194,7 +194,7 @@ const projects = [
     It includes a backend API built with NodeJS and TypeScript and a responsive frontend interface using React and Vite.
      The project provides a seamless way to visualize, manage, and track financial data with dynamic charts and detailed forms.`,
 
-    image: '/assets/work/finantial control.png',
+    image: '/assets/work/dev-bills.png',
 
     live: 'https://finantialcontrol.vercel.app',
 
