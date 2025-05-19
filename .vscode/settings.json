@@ -7,5 +7,8 @@
   "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
   "editor.renderWhitespace": "boundary",
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  }
 }
