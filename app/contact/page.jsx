@@ -152,6 +152,8 @@ const Contact = () => {
         }}
         className="px-5"
       >
+      
+
         <div className="container mx-auto">
           <div className="flex flex-col p-5 mt-8 xl:flex-row justify-around">
             {/* form */}
@@ -301,15 +303,6 @@ const Contact = () => {
           </div>
         </div>
       </motion.section>
-
-      {/* notifications */}
-      <ToastContainer
-        autoClose={2000}
-        pauseOnHover
-        theme="colored"
-        position="top-right"
-        draggable
-      />
     </>
   );
 };

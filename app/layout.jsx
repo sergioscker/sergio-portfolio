@@ -10,6 +10,7 @@ import { Header } from '@/components/Header';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
 import ThemeProviderWrapper from '@/components/ThemeProvider';
 import ClientOnly from '@/components/ClientOnly';
+import { ToastContainer } from 'react-toastify';
 
 // fonts style
 const jetBrainsMono = JetBrains_Mono({
@@ -57,6 +58,15 @@ export default function RootLayout({ children }) {
 
       <body className={`${jetBrainsMono.variable}  antialiased`}>
         <ClientOnly>
+          {/* notifications */}
+          <ToastContainer
+            autoClose={2000}
+            pauseOnHover
+            theme="colored"
+            position="top-right"
+            draggable
+          />
+
           <ThemeProviderWrapper>
             <Header />
 
